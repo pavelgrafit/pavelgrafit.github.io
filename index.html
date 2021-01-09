@@ -1,53 +1,54 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>The second page</title>
-	<meta charset="UTF-8">
+	<title>MyCompany</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header>
-		<h1>H1 header</h1>
-		<h2>H2 header</h2>
-	</header>
+		<div class="header__logo"><p>mycompany</p></div>
+		<nav>
+			<div class="topnav" id="myTopnav">
+				<a href="#">HOME</a>
+				<a href="#">ABOUT</a>
+				<a href="#">SERVICES</a>
+				<a href="#">PORTFOLIO</a>
+				<a href="#">TESTIMONIALS</a>
+				<a href="#">CONTACT</a>
+				<a href="#" class="icon" id="menu">&#9776;</a>
+			</div>
+		</nav>
+	</header>	
+	<main>
+		<div class="main__welcome">
+			<h1>WELCOME ON <span class="mycompany">MYCOMPANY</span></h1>
+			<p>We are a digital agency with years of experience ans with extraordinary people</p>
+		</div>
 
-	<nav>
-		<ul>
-			<li><a href="letsstart.html">letsstart.html</a></li>
-			<li>2</li>
-			<li>3</li>
-		</ul>
-	</nav>
+		<div class="wrapper">
+			<div class="main__about">
+				<div class="about__left">
+					<img class="mw-100" src="img/mac.png" alt="mac">
+				</div>
+				<div class="about__right">
+					<h1>SOME WORDS <span class="about__us">ABOUT US</span></h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ex quidem maiores ullam quis, at asperiores minus ad eaque maxime possimus .</p>
+					<ul>
+						<li><span class="bold">Mission - </span><span class="italic">We deliver uniqueness and quality</span></li>
+						<li><span class="bold">Skills - </span><span class="italic">Delivering fast and excellent results</span></li>
+						<li><span class="bold">Clients - </span><span class="italic">Satisfied clients thanks to our experience</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</main>
 
-	<section>
-		<h1>Section</h1>
-		<article>
-			<p>The first row</p>
-			<p>The second row</p>
-		</article>
-	</section>
 
-	<aside>
-		<p>Aside thing</p>
-	</aside>
 
-	<p>
-		<audio controls="controls" autoplay loop="-1">
-			<source src="MENU TOO.mp3" type="audio/mp3">
-			Audio is not supported in your browser :(
-		</audio>
-	</p>
-
-	<p>
-		<video controls width="50%" height="50%">
-			<source src="Олдскул.mp4" type="video/mp4">
-		</video>
-		Video is not supported in your browser :(
-	</p>
-
-	<p>
-		<progress value="30" max="100">
-	</p>
-
-	<footer>Copyright &copy; PGstudio</footer>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

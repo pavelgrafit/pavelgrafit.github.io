@@ -1,0 +1,212 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	width: 100%;
+	background-color: #000;
+	display: flex;
+}
+
+.header__logo {
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 800;
+	font-size: 24px;
+	cursor: pointer;
+	margin-top: 56px;
+	margin-left: 12%;
+}
+
+nav {
+	margin-top: 56px;
+	margin-left: 29%;
+}
+
+.topnav a {
+	color: #fff;
+	text-align: center;
+	padding: 11px 16px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.topnav a:hover {
+	border-bottom: 3px solid #fcac45;
+}
+
+.topnav .icon {
+	display: none;
+}
+
+
+main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+main .main__welcome {
+	background: #000;
+	text-align: center;
+	padding: 200px 0px 410px 0px;
+}
+
+main .main__welcome p {
+	color: #999999;
+	font-size: 20px;
+}
+
+main .main__welcome h1 {
+	color: #999999;
+	font-size: 44px;
+}
+
+.mycompany {
+	color: #fcac45;
+}
+
+.mw-100 {
+	min-width: 100%;
+}
+
+
+
+.wrapper {
+	width: 76%;
+	margin: 0px auto;
+}
+
+main .main__about {
+	display: flex;
+	padding: 100px 0 100px 0;
+}
+
+.about__right {
+	margin-left: 175px;
+}
+
+.about__right h1 {
+	display: inline-block;
+	border-bottom: 3px solid #fcac45;
+	padding-bottom: 20px;
+}
+
+.about__right p {
+	margin: 30px 0px 50px 0;
+	color: #6c6c6c;
+}
+
+.about__right li {
+	background: url("img/mark.png") 0px no-repeat;
+	padding-left: 25px;
+	margin-top: 10px;
+	color: #5c5c5c;
+}
+
+.about__us {
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+
+@media screen and (max-width: 1257px) {
+	nav {
+		margin-left: 20%
+	}
+}
+
+@media screen and (max-width: 1093px) {
+	nav {
+		margin-left: 10%;
+	}	
+}
+
+@media screen and (max-width: 1010px) {
+	.topnav a{
+		display: none;
+	}
+	.topnav .icon {
+		float: right;
+		margin-top: -17px;
+		display: block;
+		color: #fff;
+		font-size: 25px;
+	}
+	nav {
+		width: 100%;
+	}
+	.topnav.responsive {
+		position: relative;
+		top: 50px;
+		left: -200px;
+	}
+	header .topnav.responsive {
+		height: 340px;
+	}
+	.topnav.responsive a.icon {
+		position: absolute;
+		top: -50px;
+		right: -200px;
+	}
+	.topnav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+	main .main__welcome {
+		padding: 50px 0px 50px 0;	
+	}
+
+	main .main__welcome p {
+		font-size: 14px;
+	}
+
+	main .main__welcome h1 {
+		font-size: 25px;
+	}
+
+	.mw-100 {
+	max-width: 100%;
+	}
+
+	.main__about {
+		flex-direction: column;
+	}
+
+	.about__right {
+		text-align: center;
+		margin-left: 0px;
+	}
+
+	.about__right li {
+		text-align: left;
+	}
+
+	.about__right h1 {
+		font-size: 20px;
+		margin-top: 10px;
+	}
+}
+
