@@ -79,11 +79,6 @@ main .main__welcome h1 {
 	color: #fcac45;
 }
 
-.mw-100 {
-	min-width: 100%;
-}
-
-
 
 .wrapper {
 	width: 76%;
@@ -117,6 +112,10 @@ main .main__about {
 	color: #5c5c5c;
 }
 
+.mw-100 {
+	min-width: 100%;
+}
+
 .about__us {
 	font-weight: 600;
 }
@@ -128,6 +127,81 @@ main .main__about {
 .italic {
 	font-style: italic;
 }
+
+
+.main__team {
+	background: #000;
+	text-align: center;
+	padding: 100px 0px 165px 0px;
+	color: #fff;
+}
+
+.main__team h1 {
+	font-size: 44px;
+	padding-bottom: 30px;
+}
+
+.line {
+	width: 100px;
+	height: 3px;
+	background: #fcac45;
+	position: relative;
+	margin: 0px auto 85px auto;
+}
+
+.photo {
+	background: #d7d7d7;
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	margin: 20px auto;
+}
+
+.team__cards {
+	display: flex;
+}
+
+.name {
+	font-size: 20px;
+	margin-bottom: 7px;
+}
+
+.position {
+	font-size: 16px;
+	margin-bottom: 35px;
+}
+
+.about__position {
+	font-size: 14px;
+}
+
+.card {
+	margin: 0px 40px;
+}
+
+
+.services__cards {
+	text-align: center;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-column-gap: 20px;
+}
+
+.main__services h1 {
+	text-align: center;
+	padding: 100px 0px 30px 0px;
+}
+
+.main__services p {
+	color: #6c6c6c;
+	margin-bottom: 100px;
+}
+
+.services__card h4 {
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
 
 
 @media screen and (max-width: 1257px) {
@@ -207,6 +281,14 @@ main .main__about {
 	.about__right h1 {
 		font-size: 20px;
 		margin-top: 10px;
+	}
+
+	.team__cards {
+		flex-direction: column;
+	}
+
+	.services__cards {
+		grid-template-columns: auto;
 	}
 }
 
