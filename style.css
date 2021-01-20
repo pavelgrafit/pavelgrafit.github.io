@@ -3,8 +3,8 @@
 	height: 500px;
 	border-radius: 50%;
 	background: red;
-	min-height: 50px;
-	min-width: 50px;
+	min-height: 200px;
+	min-width: 200px;
 }
 
 body {
