@@ -39,6 +39,6 @@ function loop(){
 	array = new Uint8Array(analyser.frequencyBinCount);
 	analyser.getByteFrequencyData(array);
 
-	logo.minHeight = (array[40])+"px";
+	logo.height = (array[40])+"px";
 	logo.width = (array[40])+"px";
 }
