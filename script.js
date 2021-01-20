@@ -36,6 +36,7 @@ function loop(){
     array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
     console.log(array);
+    console.log("NNNNNNNNNNNNNNNNNNNNNNNNNN");
 
     if ((array[40]/150 > 1) && (array[40]/150 < 1.4)) 
     {
