@@ -5,13 +5,25 @@ logo = document.getElementById("logo").style;
 audio = document.getElementById("audio");
 
 
-if(!context){
+/*if(!context){
     preparation();
 }
 
 if(!audio.paused)
 {
 	loop();
+}*/
+
+window.onclick = function(){
+    if(!context){
+        preparation();
+    }
+    if(audio.paused){
+        audio.play();
+        loop();
+    }else{
+        audio.pause();
+    }
 }
 
 function preparation(){
@@ -36,4 +48,7 @@ function loop(){
     {
     	logo.transform = "scale(" + (array[40]/150).toString() + ")";
     }
+    else {
+    	logo.transform = "scale(1)";
+    } 
 }
