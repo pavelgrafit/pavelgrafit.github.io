@@ -6,16 +6,6 @@ audio = document.getElementById("audio");
 
 button = document.getElementById("button");
 
-
-/*if(!context){
-    preparation();
-}
-
-if(!audio.paused)
-{
-	loop();
-}*/
-
 button.onclick = function(){
     if(!context){
         preparation();
@@ -23,15 +13,10 @@ button.onclick = function(){
     if(audio.paused){
         audio.play();
         loop();
+        button.value = "Stop a Magic"
     }else{
         audio.pause();
-    }
-    if(button.value = "Start a Magic")
-    {
-    	button.value = "Stop a Magic"
-    }
-    else {
-    	button.value = "Start a Magic"
+        button.value = "Start a Magic"
     }
 }
 
@@ -50,9 +35,7 @@ function loop(){
     }
     array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
-
-/*    logo.height = (array[40])+"px";
-    logo.width =  (array[40])+"px";*/
+    
     if ((array[40]/150 > 1) && (array[40]/150 < 1.4)) 
     {
     	logo.transform = "scale(" + (array[40]/150).toString() + ")";
