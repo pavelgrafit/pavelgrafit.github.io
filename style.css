@@ -77,3 +77,33 @@ footer a {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+.carousel-inner h5 {
+	font-size: 40px;
+}
+
+.carousel-inner p {
+	font-size: 20px;
+}
+
+@media (max-width: 500px) {
+	
+	.carousel-inner h5 {
+		font-size: 30px;
+	}
+
+	.carousel-inner p {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 350px) {
+	
+	.carousel-inner h5 {
+		font-size: 24px;
+	}
+
+	.carousel-inner p {
+		font-size: 12px;
+	}
+}
