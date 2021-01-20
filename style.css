@@ -18,8 +18,22 @@ body {
 	margin: 0 auto;
     background: #eee;
     font-family: 'Yusei Magic', sans-serif;
-/*    background: url("bg.jpg") no-repeat center center;
-    background-size: cover;*/
+}
+
+input[type="button"] {
+	background: #7BA5EB;
+	border-radius: 20px;
+	width: 200px;
+	height: 40px;
+	border: none;
+	margin-top: 50px;
+	transition: .5s;
+}
+
+input[type="button"]:hover {
+	background: #1366F0;
+	font-weight: 500;
+	transform: scale(1.1);
 }
 
 header {
@@ -33,8 +47,8 @@ audio {
 }
 
 .carousel {
-	width: 500px;
 	height: 500px;
+	width: 500px;
 	/*border: 5px solid black;*/
 	/*box-shadow: 5px 5px 5px #aaa;*/
 }
@@ -46,4 +60,29 @@ audio {
 
 img.d-block {
 	border-radius: 5%;
+	height: 100%;
+	width: 100%;
+}
+
+.icons {
+	width: 50px;
+	height: 50px;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer {
+	margin: 150px auto 20px auto;
+}
+
+footer h3 {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+footer a {
+	margin-left: 5px;
+	margin-right: 5px;
 }

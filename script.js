@@ -4,6 +4,8 @@ logo = document.getElementById("logo").style;
 
 audio = document.getElementById("audio");
 
+button = document.getElementById("button");
+
 
 /*if(!context){
     preparation();
@@ -14,7 +16,7 @@ if(!audio.paused)
 	loop();
 }*/
 
-window.onclick = function(){
+button.onclick = function(){
     if(!context){
         preparation();
     }
@@ -44,7 +46,7 @@ function loop(){
 
 /*    logo.height = (array[40])+"px";
     logo.width =  (array[40])+"px";*/
-    if (array[40]/150 > 1)
+    if ((array[40]/150 > 1) && (array[40]/150 < 1.4)) 
     {
     	logo.transform = "scale(" + (array[40]/150).toString() + ")";
     }
