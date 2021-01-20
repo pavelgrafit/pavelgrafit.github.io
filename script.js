@@ -26,6 +26,13 @@ button.onclick = function(){
     }else{
         audio.pause();
     }
+    if(button.value = "Start a Magic")
+    {
+    	button.value = "Stop a Magic"
+    }
+    else {
+    	button.value = "Start a Magic"
+    }
 }
 
 function preparation(){
