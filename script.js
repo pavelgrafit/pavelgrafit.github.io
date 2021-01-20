@@ -38,9 +38,9 @@ function loop(){
     console.log(array);
     console.log("NNNNNNNNNNNNNNNNNNNNNNNNNN");
 
-    if ((array[10]/150 > 1) && (array[10]/150 < 1.4)) 
+    if ((array[0]/150 > 1) && (array[0]/150 < 1.4)) 
     {
-    	logo.transform = "scale(" + (array[10]/150).toString() + ")";
+    	logo.transform = "scale(" + (array[0]/150).toString() + ")";
     }
     else {
     	logo.transform = "scale(1)";
