@@ -34,5 +34,5 @@ function loop(){
 
 /*    logo.height = (array[40])+"px";
     logo.width =  (array[40])+"px";*/
-    logo.scale(array[40]/150);
+    logo.transform = "scale(" + (array[40]/150).toString() + ")";
 }
