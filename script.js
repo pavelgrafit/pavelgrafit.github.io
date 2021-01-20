@@ -35,7 +35,8 @@ function loop(){
     }
     array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
-    
+    console.log(array);
+
     if ((array[40]/150 > 1) && (array[40]/150 < 1.4)) 
     {
     	logo.transform = "scale(" + (array[40]/150).toString() + ")";
