@@ -36,9 +36,9 @@ function loop(){
     array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
 
-    if ((array[0]/200 > 1) && (array[0]/200 < 1.4)) 
+    if ((array[0]/150 > 1) && (array[0]/150 < 1.4)) 
     {
-    	logo.transform = "scale(" + (array[0]/200).toString() + ")";
+    	logo.transform = "scale(" + (array[0]/150).toString() + ")";
     }
     else {
     	logo.transform = "scale(1)";
