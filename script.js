@@ -9,7 +9,7 @@ if(!context){
     preparation();
 }
 
-if(audio.playing)
+if(!audio.paused)
 {
 	loop();
 }
