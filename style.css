@@ -1,18 +1,15 @@
-#logo {
-	width: 500px;
-	height: 500px;
-	border-radius: 50%;
-	background: red;
-	min-height: 200px;
-	min-width: 200px;
+#logo{
+    width: 500px;
+    min-height: 500px;
+    border-radius: 50%;
+    background: red;
 }
-
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	width: 100vh;
-	min-height: 100vh;
-	background: #1e1e1e;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    width: 100vw;
+    min-height: 100vh;
+    background: #1e1e1e;
 }
