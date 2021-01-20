@@ -14,7 +14,7 @@ if(!audio.paused)
 	loop();
 }*/
 
-window.onclick = function(){
+audio.onclick = function(){
     if(!context){
         preparation();
     }
