@@ -4,16 +4,14 @@ logo = document.getElementById("logo").style;
 
 audio = document.getElementById("audio");
 
-window.onclick = function(){
-    if(!context){
-        preparation();
-    }
-    if(audio.paused){
-        audio.play();
-        loop();
-    }else{
-        audio.pause();
-    }
+
+if(!context){
+    preparation();
+}
+
+if(audio.playing)
+{
+	loop();
 }
 
 function preparation(){
@@ -34,5 +32,8 @@ function loop(){
 
 /*    logo.height = (array[40])+"px";
     logo.width =  (array[40])+"px";*/
-    logo.transform = "scale(" + (array[40]/150).toString() + ")";
+    if (array[40]/150 > 1)
+    {
+    	logo.transform = "scale(" + (array[40]/150).toString() + ")";
+    }
 }

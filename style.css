@@ -1,30 +1,38 @@
 #logo{
     width: 500px;
     height: 500px;
-    border: 5px solid white;
+    border: 5px solid black;
     border-radius: 5%;
     min-width: 150px;
     min-height: 150px;
     max-height: 200px;
     max-width: 200px;
-    transition: .5s;
+    transition: .2s;
 }
 
 #logo:hover {
 	transform: scale(1.1);
 }
 
-body{
+body {
+	margin: 0%;
+    background: #eee;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+header {
+	text-align: center;
+	font-size: 20px;
+}
+
+main{
+	margin-top: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0%;
-    width: 100vw;
-    min-height: 100vh;
-    background: #eee;
 }
 
 audio {
-	margin-top: 20px;
+	margin-top: 40px;
 }
