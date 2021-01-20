@@ -35,12 +35,12 @@ function loop(){
     }
     array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
-    console.log(array[0]);
+    console.log(array);
     console.log("NNNNNNNNNNNNNNNNNNNNNNNNNN");
 
-    if ((array[0]/150 > 1) && (array[0]/150 < 1.4)) 
+    if ((array[10]/150 > 1) && (array[10]/150 < 1.4)) 
     {
-    	logo.transform = "scale(" + (array[0]/150).toString() + ")";
+    	logo.transform = "scale(" + (array[10]/150).toString() + ")";
     }
     else {
     	logo.transform = "scale(1)";
