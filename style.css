@@ -36,6 +36,7 @@ input[type="button"]:hover {
 	background: #1366F0;
 	font-weight: 500;
 	transform: scale(1.1);
+	cursor: pointer;
 }
 
 header {
