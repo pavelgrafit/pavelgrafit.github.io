@@ -21,7 +21,7 @@ button.onclick = function(){
 }
 
 function preparation(){
-    context = new AudioContext();
+    context = new webkitAudioContext();
     analyser = context.createAnalyser();
     src = context.createMediaElementSource(audio);
     src.connect(analyser);
