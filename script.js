@@ -22,7 +22,7 @@ button.onclick = function(){
 
 function preparation(){
     var AudioContext = window.AudioContext // Default
-      || (window as any).webkitAudioContext;// Safari and old versions of Chrome
+      || window.webkitAudioContext;// Safari and old versions of Chrome
     context = new AudioContext();
     analyser = context.createAnalyser();
     src = context.createMediaElementSource(audio);
