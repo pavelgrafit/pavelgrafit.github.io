@@ -48,8 +48,13 @@ a {
 }
 
 
+body {
+	font-family: 'Balsamiq Sans', cursive;
+}
 
-
+html {
+	scroll-behavior: smooth;
+}
 
 
 .header {
@@ -227,12 +232,31 @@ a {
 
 
 
-.song {
-	padding-top: 250px;
+
+
+.bio {
+	padding-top: 150px;
+	padding-bottom: 40px;
 }
 
-.song__body {
+.bio__body {
+	display: grid;
+	grid-template-columns: 0.3fr minmax(300px, 0.4fr) 0.3fr;
+	grid-template-rows: 0.1fr minmax(400px, 1fr) 0.1fr;
+	gap: 20px;
+	font-size: 20px;
+}
+
+.chapter {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	text-align: center;
+	/*background-color: red;*/
+}
+
+.text {
+	opacity: 0;
 }
 
 .song__title {
@@ -243,12 +267,12 @@ a {
 
 #logo{
     border-radius: 5%;
-    max-height: 200px;
+    /*min-height: 200px;*/
     max-width: 200px;
     width: 60%;
-    height: 60%;
+    /*height: 60%;*/
     transition: .2s;
-    filter: drop-shadow(5px 5px 5px #aaa);
+    /*filter: drop-shadow(5px 5px 5px #aaa);*/
 }
 
 #logo:hover {
@@ -259,9 +283,9 @@ input[type="button"] {
 	background: #7BA5EB;
 	border-radius: 20px;
 	max-width: 200px;
-	max-height: 40px;
-	height: 5%;
-	width: 30%;
+	/*max-height: 40px;*/
+	/*height: 5%;*/
+	width: 50%;
 	border: none;
 	margin-top: 40px;
 	transition: .2s;
@@ -277,7 +301,42 @@ input[type="button"]:hover {
 	cursor: pointer;
 }
 
+@media (max-width: 830px) {
+
+	.bio {
+		padding-top: 120px;
+	}
+
+	.bio__body {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		gap: 20px;
+		font-size: 20px;
+	}
+
+	#chapter__1, #chapter__2, #chapter__3, #chapter__7, #chapter__8, #chapter__9 {
+		display: none;
+	}
+
+	#text__18, #text__17, #text__16, #text__15, #text__14, #text__5, #text__6, #text__7, #text__8, #text__9 {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.bio {
+		padding-top: 80px;
+	}
+}
+
 @media (max-width: 500px) {
+
+	.bio__body {
+		font-size: 16px;
+	}
+
 	input[type="button"] {
 		font-size: 12px;
 	}
@@ -294,6 +353,15 @@ input[type="button"]:hover {
 }
 
 @media (max-width: 350px) {
+
+	.bio {
+		padding-bottom: 30px;
+	}
+
+	.bio__body {
+		font-size: 12px;
+	}
+
 	input[type="button"] {
 		font-size: 8px;
 		margin-top: 40px;
@@ -309,6 +377,150 @@ input[type="button"]:hover {
 		margin-top: 20px;
 	}
 }
+
+
+
+
+
+
+.gallery {
+	padding-bottom: 80px;
+	padding-top: 40px;
+	background-color: #000;
+}
+
+.gallery__body {
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 16px;
+}
+
+.gallery__title {
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	color: #fff;
+}
+
+.gallery__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 15px;
+}
+
+.gallery__item {
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.1fr 1fr 0.28fr;
+	gap: 3px;
+	border-radius: 8px;
+}
+
+.gallery__bold {
+	font-weight: 600;
+}
+
+.item__title {
+	margin-top: 8px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 3px;
+	display: flex;
+	align-items: center;
+}
+
+.item__title img {
+	border-radius: 50%;
+	border: 2px solid red;
+	margin-right: 8px;
+	width: 30px;
+	height: 30px;
+}
+
+.item__image img {
+	width: 300px;
+	height: 300px;
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.item__image {
+	position: relative;
+	padding-bottom: 100%;
+}
+
+.item__description {
+	margin: 5px 5px 8px 5px;
+	padding: 3px;
+}
+
+.item__description p:first-child {
+	margin-bottom: 7px;
+}
+
+.item__description p:last-child {
+	margin-top: 7px;
+	color: #777;
+}
+
+
+
+@media (max-width: 767px) {
+
+	.gallery__grid {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	.gallery {
+		padding-bottom: 45px;
+	}
+}
+
+@media (max-width: 500px) {
+
+	.gallery__title {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+
+	.gallery {
+		padding-top: 35px;
+	}
+
+	.gallery__grid {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 15px;
+	}
+
+	.gallery__item {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 350px) {
+
+	.gallery__title {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+
+	.gallery {
+		padding-top: 25px;
+		padding-bottom: 35px;
+	}
+}
+
 
 
 
@@ -374,6 +586,11 @@ input[type="button"]:hover {
 		margin: 0px 0 20px 0;
 	}
 }
+
+
+
+
+
 
 
 
