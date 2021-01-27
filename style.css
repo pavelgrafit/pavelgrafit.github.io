@@ -939,7 +939,24 @@ input[type="button"]:hover {
 	font-family: 'Balsamiq Sans', cursive;
 }
 
+.popup__text p:first-child {
+	margin-bottom: 15px;
+}
 
+.popup__text p a {
+	margin-left: 5px;
+	color: #fff;
+	padding: 4px 6px;
+	background-color: #000;
+	border: 2px solid #000;
+	border-radius: 3px;
+	display: inline-block;
+	transition: 0.2s;
+}
+
+.popup__text p a:hover {
+	transform: scale(1.1);
+}
 
 
 
