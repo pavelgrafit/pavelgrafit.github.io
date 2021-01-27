@@ -2,26 +2,20 @@ var audio, context, analyser, src, array, logo;
 
 let counter = 0;
 let whatArray = 0;
-let copyWhatArray = 0;
+let copyWhatArray = new Array();
 let styleArray = new Array();
-let isEnded = 0;
 let checkBool = false;
 
-console.log( document.documentElement.clientWidth );
+logo = document.getElementById("logo").style;
+audio = document.getElementById("audio");
+button = document.getElementById("button");
 
-textArray = new Array();
-copyWhatArray = new Array();
 
 for (let i = 1; i < 19; i++) {
-    textArray.push(document.getElementById(("text__" + i.toString())).innerHTML);
     copyWhatArray.push(document.getElementById(("text__" + i.toString())).textContent);
 }
 
-logo = document.getElementById("logo").style;
 
-audio = document.getElementById("audio");
-
-button = document.getElementById("button");
 
 for (let i = 1; i < 19; i++) {
     styleArray.push(document.getElementById(("text__" + i.toString())).style);
@@ -38,20 +32,18 @@ button.onclick = function(){
     }else{
         audio.pause();
         button.value = "Start a Magic";
+        window.requestAnimationFrame(end);
     }
 }
 
 audio.onended = function() {
     button.value = "Start a Magic";
-    isEnded = 1;
     window.requestAnimationFrame(end);
 };
 
 function end() {
-    if (isEnded) {
-        for (let i = 0; i < 18; i++) {
-            styleArray[i].opacity = 0;
-        }
+    for (let i = 0; i < 18; i++) {
+        styleArray[i].opacity = 0;
     }
 }
 
@@ -66,11 +58,6 @@ function preparation(){
     loop();
 }
 
-
-
-function replace3() {
-    textArray[3] = copyWhatArray[whatArray];
-}
 
 function loop(){
     if(!audio.paused){
@@ -119,8 +106,6 @@ function loop(){
     else {
         if (counter < 250)
         {
-            textArray[3] = "hueta";
-            textArray[12] = "hui";
             if (counter < 100)
             {
                 if (!checkBool) {
