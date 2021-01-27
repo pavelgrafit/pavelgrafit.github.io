@@ -285,7 +285,8 @@ body {
 }
 
 input[type="button"] {
-	background: #7BA5EB;
+	background: #000;
+	color: #fff;
 	border-radius: 20px;
 	max-width: 200px;
 	/*max-height: 40px;*/
@@ -300,7 +301,7 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-	background: #1366F0;
+	/*background: #1366F0;*/
 	font-weight: 500;
 	transform: scale(1.1);
 	cursor: pointer;
@@ -632,7 +633,17 @@ input[type="button"]:hover {
 .feedback__form input:last-child {
 	margin-bottom: 0;
 	width: 86%;
+	background-color: #fff;
+	color: #000;
+	transition: .2s;
+	border-radius: 25px;
 }
+
+.feedback__form input:last-child:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
 
 .feedback__form textarea {
 	height: 100px;
@@ -701,7 +712,9 @@ input[type="button"]:hover {
 		padding-top: 10px;
 		padding-bottom: 16px; 
 	}
-
+	.feedback__form input:last-child {
+		width: 87%;
+	}
 }
 
 @media (max-width: 350px) {
@@ -756,6 +769,10 @@ input[type="button"]:hover {
 		width: 80%;
 		padding-top: 10px;
 		padding-bottom: 12px; 
+	}
+
+	.feedback__form input:last-child {
+		width: 89%;
 	}
 }
 
