@@ -56,6 +56,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+body {
+	background-color: #000;
+}
+
 
 .header {
 	position: fixed;
@@ -237,6 +241,7 @@ html {
 .bio {
 	padding-top: 150px;
 	padding-bottom: 40px;
+	background-color: #fff;
 }
 
 .bio__body {
@@ -543,6 +548,7 @@ input[type="button"]:hover {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	position: relative;
+	background-color: #fff;
 }
 
 .feedback span[id="contact__us"] {
