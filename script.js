@@ -39,7 +39,7 @@ button.onclick = function(){
     }else{
         audio.pause();
         button.value = "Start a Magic";
-        window.requestAnimationFrame(end);
+        window.requestAnimationFrame(pause);
     }
 }
 
@@ -47,6 +47,15 @@ audio.onended = function() {
     button.value = "Start a Magic";
     window.requestAnimationFrame(end);
 };
+
+function pause() {
+    for (let i = 0; i < 18; i++) {
+        styleArray[i].opacity = 0;
+    }
+    for (let i = 0; i < 16; i++) {
+        rectangles[i].height = "0px";
+    }
+}
 
 function end() {
     for (let i = 0; i < 18; i++) {
