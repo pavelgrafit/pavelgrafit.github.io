@@ -15,6 +15,9 @@ document.getElementById("bass__body").style.height = document.getElementById("ho
 document.getElementById("home").style.paddingTop + document.getElementById("home").style.paddingBottom - 
 document.getElementById("header__body").style.height;
 
+oldUserWidth = document.documentElement.clientWidth;
+let newUserWidth;
+
 
 for (let i = 1; i < 19; i++) {
     copyWhatArray.push(document.getElementById(("text__" + i.toString())).textContent);
@@ -49,6 +52,7 @@ audio.onended = function() {
 };
 
 function pause() {
+    logo.transform = "scale(1)";
     for (let i = 0; i < 18; i++) {
         styleArray[i].opacity = 0;
     }
@@ -58,6 +62,7 @@ function pause() {
 }
 
 function end() {
+    logo.transform = "scale(1)";
     for (let i = 0; i < 18; i++) {
         styleArray[i].opacity = 0;
     }
@@ -95,6 +100,17 @@ function loop(){
     	logo.transform = "scale(1)";
     } 
 
+    newUserWidth = document.documentElement.clientWidth;
+
+    if (newUserWidth != oldUserWidth) {
+        for(let i = 0; i < 16; i++) {
+            styleArray[i].opacity = 0;
+        }
+        oldUserWidth = newUserWidth;
+    }
+
+
+
     counter++;
 
     for (let i = 0; i < 16; i++) {
@@ -114,7 +130,7 @@ function loop(){
         }
 
 
-    if (document.documentElement.clientWidth > 829) {
+    if (newUserWidth > 829) {
         if (counter < 250)
         {
             if (counter < 100)
