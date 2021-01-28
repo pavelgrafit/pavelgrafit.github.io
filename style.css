@@ -891,6 +891,7 @@ input[type="button"]:hover {
 	visibility: hidden;
 	transition: all 0.8s ease 0s;
 	text-align: center;
+	z-index: 2;
 }
 
 .popup:target {
@@ -1052,6 +1053,6 @@ input[type="button"]:hover {
 	min-height: 0px;
 	width: 5.5%;
 	transition: 0.1s;
-	z-index: 10;
+	z-index: 1;
 }
 
