@@ -497,8 +497,8 @@ input[type="button"]:hover {
 }
 
 .item__description {
-	margin: 5px 5px 8px 5px;
-	padding: 3px;
+	margin: 7px 5px 8px 5px;
+	padding: 1px;
 }
 
 .item__description p:first-child {
@@ -512,7 +512,7 @@ input[type="button"]:hover {
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 824px) {
 
 	.gallery__grid {
 		grid-template-columns: 1fr 1fr;
@@ -525,7 +525,7 @@ input[type="button"]:hover {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 565px) {
 
 	.gallery__title {
 		font-size: 30px;
