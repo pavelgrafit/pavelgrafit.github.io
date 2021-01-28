@@ -5,17 +5,24 @@ let whatArray = 0;
 let copyWhatArray = new Array();
 let styleArray = new Array();
 let checkBool = false;
+let rectangles = new Array();
 
 logo = document.getElementById("logo").style;
 audio = document.getElementById("audio");
 button = document.getElementById("button");
+
+document.getElementById("bass__body").style.height = document.getElementById("home").style.height + 
+document.getElementById("home").style.paddingTop + document.getElementById("home").style.paddingBottom - 
+document.getElementById("header__body").style.height;
 
 
 for (let i = 1; i < 19; i++) {
     copyWhatArray.push(document.getElementById(("text__" + i.toString())).textContent);
 }
 
-
+for (let i = 1; i < 17; i++) {
+    rectangles.push(document.getElementById(("rect__" + i.toString())).style);
+}
 
 for (let i = 1; i < 19; i++) {
     styleArray.push(document.getElementById(("text__" + i.toString())).style);
@@ -45,6 +52,11 @@ function end() {
     for (let i = 0; i < 18; i++) {
         styleArray[i].opacity = 0;
     }
+    for (let i = 0; i < 16; i++) {
+        rectangles[i].height = "0px";
+    }
+    counter = 0;
+    whatArray= 0;
 }
 
 function preparation(){
@@ -75,8 +87,22 @@ function loop(){
     } 
 
     counter++;
-    
-    
+
+    for (let i = 0; i < 16; i++) {
+        let heightHelp = 0;
+        for (let j = 0; j < 64; j++) {
+            heightHelp = heightHelp + array[j + 64 * i];
+        }
+        if (document.documentElement.clientWidth > 829) 
+        {
+            heightHelp = 2 * heightHelp / 64 / 6;
+        }
+        else {
+            heightHelp = heightHelp / 64 / 6;
+        }
+        
+        rectangles[i].height = heightHelp.toString() + "px";
+        }
 
 
     if (document.documentElement.clientWidth > 829) {
