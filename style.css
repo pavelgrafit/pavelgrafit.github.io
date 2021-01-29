@@ -379,7 +379,8 @@ input[type="button"]:hover {
 	}
 
 	input[type="button"] {
-		font-size: 12px;
+		font-size: 14px;
+		padding: 8px;
 	}
 	.song {
 		padding-top: 180px;
@@ -404,8 +405,9 @@ input[type="button"]:hover {
 	}
 
 	input[type="button"] {
-		font-size: 8px;
+		font-size: 12px;
 		margin-top: 40px;
+		padding: 6px;
 	}
 	.song {
 		padding-top: 120px;
@@ -415,7 +417,7 @@ input[type="button"]:hover {
 		margin-bottom: 20px;
 	}
 	input[type="button"] {
-		margin-top: 20px;
+		margin-top: 25px;
 	}
 }
 
