@@ -329,7 +329,7 @@ input[type="button"] {
 	transition: .2s;
 	font-family: 'Balsamiq Sans', cursive;
 	font-size: 20px;
-	padding: 5px;
+	padding: 10px;
 	z-index: 12;
 }
 
