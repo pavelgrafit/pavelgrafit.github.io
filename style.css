@@ -66,7 +66,7 @@ body {
   src: url("Quite Chocolatey.ttf");
 }
 
-input[type="text"], input[type="submit"], textarea, input[type="email"], input[type="tel"]{
+input[type="text"], input[type="submit"], textarea, input[type="email"], input[type="tel"], input[type="checkbox"]{
 	-webkit-appearance: none;
 } 
 
@@ -746,6 +746,10 @@ input[type="button"]:hover {
 		width: 87%;
 	}
 }
+
+.feedback__form input:last-child {
+	-webkit-appearance: none;
+} 
 
 @media (max-width: 350px) {
 
