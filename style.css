@@ -996,22 +996,6 @@ input[type="button"]:hover {
 	transition: 0.2s;
 }
 
-.popup__text p:last-child a {
-	display: inline-block;
-	margin-top: 5px;
-	margin-left: 0px;
-	color: #fff;
-	padding: 0px;
-	background-color: #fff;
-	border: none;
-	border-radius: none;
-}
-
-.popup__text p img {
-	width: 50px;
-	transition: 0.2s;
-}
-
 .popup__text p a:hover {
 	transform: scale(1.1);
 }
@@ -1020,10 +1004,6 @@ input[type="button"]:hover {
 
 @media (max-width: 500px) {
 	
-	.popup__text p img {
-		width: 40px;
-	}
-
 	.popup__title {
 		font-size: 28px;
 	}
@@ -1043,10 +1023,6 @@ input[type="button"]:hover {
 }
 
 @media (max-width: 350px) {
-
-	.popup__text p img {
-		width: 30px;
-	}
 
 	.popup__title {
 		font-size: 20px;
