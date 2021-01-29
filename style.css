@@ -66,11 +66,11 @@ body {
   src: url("Quite Chocolatey.ttf");
 }
 
-input[type=text], input[type=submit], textarea{
+input, textarea{
 	-webkit-appearance: none;
 } 
 
-a, label{
+a, label, input {
 	-webkit-tap-highlight-color: transparent;
 }
 
