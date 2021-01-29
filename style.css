@@ -66,9 +66,13 @@ body {
   src: url("Quite Chocolatey.ttf");
 }
 
-input[type="text"], input[type="submit"], textarea, input[type="email"], input[type="tel"], input[type="checkbox"]{
+input[type="text"], input[type="submit"], textarea, input[type="email"], input[type="tel"] {
 	-webkit-appearance: none;
 } 
+
+input[type="checkbox"] {
+	-webkit-appearance: checkbox;
+}
 
 a, label{
 	-webkit-tap-highlight-color: transparent;
