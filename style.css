@@ -67,11 +67,11 @@ body {
 }
 
 input, textarea{
-	-webkit-appearance: none;
+	appearance: none;
 } 
 
 a, label, input {
-	-webkit-tap-highlight-color: transparent;
+	tap-highlight-color: transparent;
 }
 
 
