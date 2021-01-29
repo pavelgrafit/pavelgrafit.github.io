@@ -66,6 +66,10 @@ body {
   src: url("Quite Chocolatey.ttf");
 }
 
+input[type=text], input[type=submit], textarea{
+	-webkit-appearance: none;
+} 
+
 
 .header {
 	position: fixed;
