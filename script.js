@@ -8,6 +8,7 @@ let checkBool = false;
 let rectangles = new Array();
 
 logo = document.getElementById("logo").style;
+jaw = document.getElementById("jaw").style;
 audio = document.getElementById("audio");
 button = document.getElementById("button");
 
@@ -53,6 +54,7 @@ audio.onended = function() {
 
 function pause() {
     logo.transform = "scale(1)";
+    jaw.transform = "rotate(0deg)";
     for (let i = 0; i < 18; i++) {
         styleArray[i].opacity = 0;
     }
@@ -99,6 +101,15 @@ function loop(){
     else {
     	logo.transform = "scale(1)";
     } 
+
+    /*if ((array[0]/160 > 1) && (array[0]/160 < 1.4)) 
+    {
+        jaw.transform = "rotate(" + (-array[0]/10).toString() + "deg)";
+    }
+    else {
+        jaw.transform = "rotate(0deg)";
+    } */
+    jaw.transform = "rotate(" + (-array[700]/10).toString() + "deg)";
 
     newUserWidth = document.documentElement.clientWidth;
 
