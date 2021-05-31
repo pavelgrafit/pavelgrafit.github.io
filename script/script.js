@@ -423,17 +423,21 @@ changeColor.onclick = function () {
 }
 
 var messageText = document.getElementById('messageText');
-
+var colorAchiev = false;
 audioFile.addEventListener("input", (e) => {
     
-    colorCount.innerHTML = "Прогресс: 1 из 1";
-    changeColor.style.display = "block";
-    colorMaster.style.backgroundColor = "#E0E0E0";
+    if (colorAchiev == false) {
+        colorCount.innerHTML = "Прогресс: 1 из 1";
+        changeColor.style.display = "block";
+        colorMaster.style.backgroundColor = "#E0E0E0";
+        
+        hideMessage();
+        setTimeout(function() {messageText.innerHTML = "Неплохо! Ты стал мастером цвета 🎨 Продолжай в том же духе чтобы получить самую лучшую награду";}, 500);
+        setTimeout(showMessage, 1000);
+        setTimeout(hideMessage, 16000);
+        colorAchiev = true;
+    }
     
-    hideMessage();
-    setTimeout(function() {messageText.innerHTML = "Неплохо! Ты стал мастером цвета 🎨 Продолжай в том же духе чтобы получить самую лучшую награду";}, 500);
-    setTimeout(showMessage, 1000);
-    setTimeout(hideMessage, 16000);
 
     fileName.innerHTML = e.target.files[0].name;
 
