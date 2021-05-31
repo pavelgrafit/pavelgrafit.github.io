@@ -770,6 +770,7 @@ function drawFFT(canvasNum, analyserNum) {
 var message = document.getElementById("message");
 var closeMessage = document.getElementById("closeMessage");
 var audioMessage = new Audio('../audio/message.mp3');
+audioMessage.preload = "auto";
 
 
 function showMessage() {
