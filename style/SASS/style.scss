@@ -500,6 +500,23 @@ $orange: #EF6213;
 						font-family: "AkzRegular";
 						font-size: 18px;
 					}
+
+		    		.color__flex {
+		    			display: flex;
+		    			flex-direction: row;
+		    			justify-content: space-between;
+
+		    			img {
+		    				width: 30px;
+		    				height: 30px;
+		    				cursor: pointer;
+		    				display: none;
+		    			}
+
+		    			img:hover {
+		    				transform: scale(1.2);
+		    			}
+		    		}
 				}
 			}
 		}
@@ -742,6 +759,7 @@ $orange: #EF6213;
 	    		border-radius: 30px;
 	    		margin-right: 20px;
 	    	}
+
     	}
     	
     }

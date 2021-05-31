@@ -543,6 +543,29 @@
   font-family: "AkzRegular";
   font-size: 18px;
 }
+.container .grid__container .achiev .achiev__container .achiev__element .color__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .grid__container .achiev .achiev__container .achiev__element .color__flex img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+}
+.container .grid__container .achiev .achiev__container .achiev__element .color__flex img:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
 .container .grid__container .filter__manual {
   -ms-grid-row: 9;
   -ms-grid-column: 7;

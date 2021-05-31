@@ -392,8 +392,18 @@ var fileName = document.getElementById('fileName');
 
 src = audioCtx.createMediaElementSource(document.getElementById("audio"));
 
+
+var colorCount = document.getElementById("colorCount");
+var changeColor = document.getElementById("changeColor");
+var logo = document.getElementById("logo");
+changeColor.onclick = function () {
+    logo.style.backgroundColor = "#EF6213";
+}
+
 audioFile.addEventListener("input", (e) => {
     
+    colorCount.innerHTML = "Прогресс: 1 из 1";
+    changeColor.style.display = "block";
 
     fileName.innerHTML = e.target.files[0].name;
 
@@ -413,6 +423,9 @@ audioFile.addEventListener("input", (e) => {
     buttonImg.src = "images/play icon.svg";
     clearInterval(audioInterval);
 })
+
+
+
 
 var currentDuration = document.getElementById('currentDuration');
 var audioDuration = document.getElementById('audioDuration');
