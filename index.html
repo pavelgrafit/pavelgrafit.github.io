@@ -11,11 +11,11 @@
 </head>
 <body>
 
-	<div class="achiev__popup" id="achievPopup">
+	<div class="achiev__popup orange" id="achievPopup">
 		<p id="popupText">ПОСОСИ</p>
 	</div>
 
-	<div class="message" id="message">
+	<div class="message blue" id="message">
 		<div class="message__title">
 			<h3>Новое сообщение</h3>
 			<img src="images/close.svg" alt="close" id="closeMessage">
@@ -33,16 +33,16 @@
 	<div class="container">
 		<div class="grid__container">
 
-			<div class="logo" id="logo">
-				<img src="images/logo.svg" alt="logo">
+			<div class="logo blue">
+				<img src="images/logo.svg" alt="logo" id="logo">
 			</div>
 
-			<div class="header">
+			<div class="header blue">
 				<h1>Sonic wave</h1>
 				<p>Изучайте аналоговые фильтры с простотой и весельем</p>
 			</div>
 
-			<div class="signal">
+			<div class="signal blue">
 				<div class="signal__container">
 					<div class="play__button" id="button">
 						<div class="button">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 
-			<div class="src__settings">
+			<div class="src__settings blue">
 				<div class="music__settings" id="music__settings">
 					<h2>
 						Настройки музыки
@@ -75,7 +75,7 @@
 						<h3>Загрузите файл</h3>
 
 						<div class="upload__button" id="uploadIcon">
-							<label for="audioFile"><img src="images/upload.svg" alt=""></label>
+							<label for="audioFile"><img src="images/upload.svg" alt="upload" id="uploadImg"></label>
 						</div>
 						
 						<input type="file" name="audioFile" id="audioFile">
@@ -174,51 +174,51 @@
 
 			</div>
 
-			<div class="plot1">
+			<div class="plot1 blue">
 				<div class="plot__container">
 					<h3>Амплитуда</h3>
 					<div class="plot">
-						<img src="images/blueOscil.png" alt="blueOscil">
+						<img src="images/blueOscil.png" alt="blueOscil" id="oscil__0">
 						<canvas id="canvas__0"></canvas>
 					</div>
 					<h3>Время</h3>
 				</div>
 			</div>
 
-			<div class="plot2">
+			<div class="plot2 orange">
 				<div class="plot__container">
 					<h3>Амплитуда</h3>
 					<div class="plot">
-						<img src="images/orangeOscil.png" alt="blueOscil">
+						<img src="images/orangeOscil.png" alt="blueOscil" id="oscil__1">
 						<canvas id="canvas__1"></canvas>
 					</div>
 					<h3>Время</h3>
 				</div>
 			</div>
 
-			<div class="plot3">
+			<div class="plot3 blue">
 				<div class="plot__container">
 					<h3>Амплитуда</h3>
 					<div class="plot">
-						<img src="images/blueOscil.png" alt="blueOscil">
+						<img src="images/blueOscil.png" alt="blueOscil" id="oscil__2">
 						<canvas id="canvas__2"></canvas>
 					</div>
 					<h3>Частота</h3>
 				</div>
 			</div>
 
-			<div class="plot4">
+			<div class="plot4 orange">
 				<div class="plot__container">
 					<h3>Амплитуда</h3>
 					<div class="plot">
-						<img src="images/orangeOscil.png" alt="blueOscil">
+						<img src="images/orangeOscil.png" alt="blueOscil" id="oscil__3">
 						<canvas id="canvas__3"></canvas>
 					</div>
 					<h3>Частота</h3>
 				</div>
 			</div>
 
-			<div class="filters">
+			<div class="filters orange">
 				<div class="filter__buttons">
 					<div id="addFilter" class="add__filter">
 						+ Добавить фильтр
@@ -272,26 +272,12 @@
 				</div>
 			</div>
 
-			<div class="achiev">
+			<div class="achiev blue">
 				<div class="achiev__container">
 					<div class="achiev__header">
 						<h2>Достижения</h2>
 					</div>
 					<div class="achiev__body">
-						<div class="achiev__element">
-							<h3>
-								Мастер
-							</h3>
-							<p>
-								Используйте все типы фильтров
-							</p>
-							<p id="achievCount">
-								Прогресс: 1 из 7
-							</p>
-							<p>
-								Награда: ???
-							</p>
-						</div>
 						<div class="achiev__element">
 							<div class="color__flex">
 								<h3>
@@ -310,13 +296,24 @@
 							</p>
 						</div>
 						<div class="achiev__element">
-							
+							<h3>
+								Мастер Sonic wave
+							</h3>
+							<p>
+								Используйте все типы фильтров
+							</p>
+							<p id="achievCount">
+								Прогресс: 1 из 7
+							</p>
+							<p>
+								Награда: ???
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="filter__manual">
+			<div class="filter__manual orange">
 				<div class="manual__container">
 					<div class="manual__header">
 						<label for="manualFilter">Типы фильтров</label>
@@ -365,15 +362,15 @@
 				</div>
 			</div>
 
-			<div class="footer1">
+			<div class="footer1 blue">
 
 			</div>
 
-			<div class="footer2">	
+			<div class="footer2 blue">	
 				&#169; Соколов П.А., 2021
 			</div>
 
-			<div class="footer3">
+			<div class="footer3 blue">
 
 				<a href="https://www.instagram.com/pavelgrafit/" target="_blank"><img src="images/inst logo.svg" alt="Instagram"></a>
 				<a href="https://github.com/pavelgrafit/" target="_blank"><img src="images/github logo.svg" alt="Github"></a>

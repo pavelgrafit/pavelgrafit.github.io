@@ -51,7 +51,6 @@ $orange: #EF6213;
 
 		.logo {
 			grid-area: logo;
-			background-color: $blue;
 			margin-right: -21px;
 			
 
@@ -64,7 +63,6 @@ $orange: #EF6213;
 
 		.header {
 			grid-area: header;
-			background-color: $blue;
 			color: #fff;
 
 			h1 {
@@ -93,7 +91,6 @@ $orange: #EF6213;
 
 		.signal {
 			grid-area: signal;
-			background-color: $blue;
 
 			.signal__container {
 				margin: 15px;
@@ -185,7 +182,6 @@ $orange: #EF6213;
 
 		.src__settings {
 			grid-area: src__settings;
-			background-color: $blue;
 			margin-top: -21px;
 			padding-top: 21px;
 			padding-left: 15px;
@@ -347,27 +343,22 @@ $orange: #EF6213;
 
 		.plot1 {
 			grid-area: plot1;
-			background-color: $blue;
 		}
 
 		.plot2 {
 			grid-area: plot2;
-			background-color: $orange;
 		}
 
 		.plot3 {
 			grid-area: plot3;
-			background-color: $blue;
 		}
 
 		.plot4 {
 			grid-area: plot4;
-			background-color: $orange;
 		}
 
 		.filters {
 			grid-area: filters;
-			background-color: $orange;	
 
 			.filter__buttons {
 				display: flex;
@@ -471,7 +462,6 @@ $orange: #EF6213;
 
 		.achiev {
 			grid-area: achiev;
-			background-color: $blue;
 
 			.achiev__container {
 				margin: 15px;
@@ -523,7 +513,6 @@ $orange: #EF6213;
 
 		.filter__manual {
 			grid-area: filter__manual;
-			background-color: $orange;
 
 			.manual__container {
 				margin: 15px;
@@ -543,7 +532,7 @@ $orange: #EF6213;
 					}
 
 					select {
-						width: 65%;
+						width: 179px;
 						margin-top: 10px;
 						font-family: "AkzRegular";
 						font-size: 18px;
@@ -586,12 +575,10 @@ $orange: #EF6213;
 
 		.footer1 {
 			grid-area: footer1;
-			background-color: $blue;
 		}
 
 		.footer2 {
 			grid-area: footer2;
-			background-color: $blue;
 
 			font-family: "AkzRegular";
 			font-size: 18px;
@@ -604,7 +591,6 @@ $orange: #EF6213;
 
 		.footer3 {
 			grid-area: footer3;
-			background-color: $blue;
 
 			display: flex;
 			flex-direction: row;
@@ -706,6 +692,14 @@ $orange: #EF6213;
         background-color: #fff;
     }
 
+    input[type='range'].blueInput:disabled::-webkit-slider-thumb {
+        background: #7464D3;
+    }
+
+    input[type='range'].blueInput:disabled::-webkit-slider-runnable-track {
+        background-color: #8876F3;
+    }
+
 
 
     .message {
@@ -713,7 +707,6 @@ $orange: #EF6213;
     	bottom: 0;
     	right: -500px;
     	padding: 15px;
-    	background-color: $blue;
     	color: #fff;
     	width: 400px;
     	z-index: 3;
@@ -777,11 +770,26 @@ $orange: #EF6213;
     	justify-content: center;
     	align-items: center;
     	z-index: 4;
-    	background-color: $orange;
     	color: #fff;
 
     	p {
     		transition: 0.1s;
     	}
     	
+    }
+
+    .blue {
+    	background-color: #3516F0;
+    }
+
+    .orange {
+    	background-color: #EF6213;
+    }
+
+    #changeColor {
+    	transition: 0.3s;
+    }
+
+    #changeColor.rotate {
+    	transform: rotate(180deg);
     }

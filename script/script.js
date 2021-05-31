@@ -102,28 +102,6 @@ addFilter.onclick = function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     htmlFilters.append(filterArray[filterArray.length - 1]);
 
     filtersType.push(document.getElementById('filterType__' + (filterArray.length - 1).toString()));
@@ -326,7 +304,6 @@ signalGain.gain.value = signalHtmlGain.value / 100;
 
 // CONNECTION
 oscillator.start();
-//oscillator.connect(signalGain);
 signalGain.connect(analyserArray[0]);
 analyserArray[0].connect(filters[0]);
 filters[0].connect(analyserArray[1]);
@@ -358,8 +335,6 @@ oscilloscope.onclick = function() {
     musicToOscil();
     for (let i = 0; i < 4; i++) {
         fillCanvas(i);
-        //drawGrid(i);
-        //drawCoord(i);
     }
 }
 
@@ -376,8 +351,6 @@ equalizer.onclick = function() {
     oscilToMusic();
     for (let i = 0; i < 4; i++) {
         fillCanvas(i);
-        //drawGrid(i);
-        //drawCoord(i);
     }
 }
 
@@ -395,9 +368,57 @@ src = audioCtx.createMediaElementSource(document.getElementById("audio"));
 
 var colorCount = document.getElementById("colorCount");
 var changeColor = document.getElementById("changeColor");
-var logo = document.getElementById("logo");
+
+var blueColor = document.querySelectorAll('.blue');
+var orangeColor = document.querySelectorAll('.orange');
+var oscilArray = [];
+for (let i = 0; i < 4; i++) {
+    oscilArray.push(document.getElementById('oscil__' + i));
+    console.log(oscilArray[i].src);
+}
+var uploadImg = document.getElementById('uploadImg');
+var logo = document.getElementById('logo');
+
+
+
+var pathLenght;
+
 changeColor.onclick = function () {
-    logo.style.backgroundColor = "#EF6213";
+    for (let i = 0; i < blueColor.length; i++) {
+        blueColor[i].classList.toggle('orange');
+        blueColor[i].classList.toggle('blue');
+    }
+    for (let i = 0; i < orangeColor.length; i++) {
+        orangeColor[i].classList.toggle('blue');
+        orangeColor[i].classList.toggle('orange');
+    }
+    for (let i = 0; i < 4; i++) {
+        pathLenght = oscilArray[i].src.split("/");
+        if (pathLenght[pathLenght.length - 1] == 'blueOscil.png') {
+            oscilArray[i].src = 'images/orangeOscil.png';
+        } else {
+            oscilArray[i].src = 'images/blueOscil.png';
+        }
+    }
+    changeColor.classList.toggle('rotate');
+    pathLenght = uploadImg.src.split("/");
+    if (pathLenght[pathLenght.length - 1] == "upload.svg") {
+        uploadImg.src = 'images/uploadInversion.svg';
+    } else {
+        uploadImg.src = 'images/upload.svg';
+    }
+    pathLenght = logo.src.split("/");
+    if (pathLenght[pathLenght.length - 1] == "logo.svg") {
+        logo.src = 'images/logoInversion.svg';
+    } else {
+        logo.src = 'images/logo.svg';
+    }
+    filtersGain.forEach(element => {
+        element.classList.toggle('blueInput');
+    });
+    filtersQ.forEach(element => {
+        element.classList.toggle('blueInput');
+    });
 }
 
 audioFile.addEventListener("input", (e) => {
@@ -466,12 +487,6 @@ function changeAudioTime() {
 var startConnection = false;
 
 function oscilToMusic() {
-    /*if (!startConnection) {
-        startConnection = true;
-    } else {
-        signalGain.disconnect(analyserArray[0]);    
-    }*/
-    
     signalGain.disconnect(analyserArray[0]);    
 
     src.connect(analyserArray[0]);
@@ -497,8 +512,6 @@ function musicToOscil() {
 
 
 
-
-
 var audioVolume = document.getElementById("audioVolume");
 
 
@@ -517,7 +530,6 @@ button.onclick = function(){
             audio.play();
             audioInterval = setInterval(changeAudioTime, 50);
         } else {
-            //analyserArray[1].connect(audioCtx.destination);
             oscillator.connect(signalGain);
         }
 
@@ -566,15 +578,6 @@ audio.onended = function() {
 
 
 
-
-
-
-
-
-
-
-
-
 var volumeValue = document.getElementById("volumeValue");
 var freqValue = document.getElementById("freqValue");
 var gainValue = document.getElementById("gainValue");
@@ -610,7 +613,6 @@ signalHtmlType.addEventListener('input', (e) => {
         customSettings.style.display = 'none';
     }
 });
-
 
 
 
@@ -662,17 +664,6 @@ n.addEventListener('input', (e) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 var sliceWidth;
 var gridSize = 20;
 var y, v;
@@ -691,9 +682,6 @@ for (let i = 0; i < 4; i++) {
 function fillCanvas(i) {
     contextArray[i].clearRect(0, 0, canvasArray[i].width, canvasArray[i].height);
 }
-
-
-
 
 
 
@@ -727,11 +715,6 @@ function drawWaveform(canvasNum, analyserNum) {
     })
 
     contextArray[canvasNum].stroke();
-
-    //drawCoord(canvasNum);
-
-
-     
 }
 
 
@@ -751,8 +734,6 @@ function drawFFT(canvasNum, analyserNum) {
     barWidth = canvasArray[canvasNum].width / dataArray.length;
     x = 0;
 
-    //drawGrid(canvasNum);
-
     dataArray.forEach((element) => {
         barHeight = element/2;
 
@@ -762,7 +743,6 @@ function drawFFT(canvasNum, analyserNum) {
         x += barWidth + 1;
     })
 
-    //drawCoord(canvasNum);
     if ((dataArray[0]/160 > 1)) 
     {
         popupText.style.transform = "scale(" + (dataArray[0]/160).toString() + ")";
@@ -786,13 +766,11 @@ audioMessage.preload = "auto";
 
 
 function showMessage() {
-    //message.style.display = "block";
     message.style.right = "0px";
     audioMessage.play();
 }
 
 function hideMessage() {
-    //message.style.display = "none";
     message.style.right = "-500px";
 }
 
@@ -812,7 +790,11 @@ var achievPopup = document.getElementById("achievPopup");
 function activatePopup() {
     achievPopup.style.display = 'flex';
     audio.src = '../audio/MORGENSHTERN - Пососи.mp3';
+    if (oscilloscope.classList.contains('active')) {
+        oscilToMusic();
+    }
     audio.play();
+    timerArray.push(setInterval(drawFFT, 5, 3, 1));
     audio.volume = 1;
     audio.currentTime = 6;
 
@@ -839,7 +821,7 @@ function activatePopup() {
     filters.push(audioCtx.createBiquadFilter());
     filters[filters.length - 1].type = "lowshelf"; 
     filters[filters.length - 1].frequency.value = 100;
-    filters[filters.length - 1].gain.value = 40;
+    filters[filters.length - 1].gain.value = 20;
     filters[filters.length - 1].Q.value = 0;
 
     filterListener();
