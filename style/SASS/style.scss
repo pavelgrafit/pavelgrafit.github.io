@@ -762,6 +762,8 @@ $orange: #EF6213;
     	background-color: $orange;
     	color: #fff;
 
-    	transition: 0.3s;
-
+    	p {
+    		transition: 0.1s;
+    	}
+    	
     }

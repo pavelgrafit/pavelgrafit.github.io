@@ -822,8 +822,24 @@ function activatePopup() {
         filtersQ.pop();
         filters.pop();
     }
+    
+    filters.push(audioCtx.createBiquadFilter());
+    filters[filters.length - 1].type = "lowshelf"; 
+    filters[filters.length - 1].frequency.value = 100;
+    filters[filters.length - 1].gain.value = 40;
+    filters[filters.length - 1].Q.value = 0;
 
+    filterListener();
 
+    if (filters.length == 1) {
+        analyserArray[0].disconnect(analyserArray[1]);
+        analyserArray[0].connect(filters[filters.length - 1]);
+        filters[filters.length - 1].connect(analyserArray[1])
+    } else {
+        filters[filters.length - 2].disconnect(analyserArray[1]);
+        filters[filters.length - 2].connect(filters[filters.length - 1]);
+        filters[filters.length - 1].connect(analyserArray[1]);
+    }
     
 }
 

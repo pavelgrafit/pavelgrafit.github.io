@@ -835,7 +835,9 @@ input[type=range]::-ms-fill-upper {
   z-index: 4;
   background-color: #EF6213;
   color: #fff;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+}
+.achiev__popup p {
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
 }
