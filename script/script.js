@@ -752,7 +752,6 @@ function drawFFT(canvasNum, analyserNum) {
     //drawCoord(canvasNum);
     if ((dataArray[0]/160 > 1)) 
     {
-        console.log("hello");
         popupText.style.transform = "scale(" + (dataArray[0]/160).toString() + ")";
     }
     else {
