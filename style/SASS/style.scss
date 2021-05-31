@@ -1,0 +1,767 @@
+
+
+@font-face {
+ font-family: "AkzBold";
+ src: url("../../font/AkzidenzGroteskPro-Bold.woff2") format("woff2"),
+        url("../../font/AkzidenzGroteskPro-Bold.woff") format("woff"),
+        url("../../font/AkzidenzGroteskPro-Bold.eot") format("eot"),
+        url("../../font/AkzidenzGroteskPro-Bold.ttf") format("ttf");
+}
+
+@font-face {
+ font-family: "AkzSuper";
+ src: url("../../font/AkzidenzGroteskPro-Super.woff2") format("woff2"),
+        url("../../font/AkzidenzGroteskPro-Super.woff") format("woff"),
+        url("../../font/AkzidenzGroteskPro-Super.eot") format("eot"),
+        url("../../font/AkzidenzGroteskPro-Super.ttf") format("ttf");
+}
+
+@font-face {
+ font-family: "AkzRegular";
+ src: url("../../font/AkzidenzGroteskPro-Regular.woff2") format("woff2"),
+        url("../../font/AkzidenzGroteskPro-Regular.woff") format("woff"),
+        url("../../font/AkzidenzGroteskPro-Regular.eot") format("eot"),
+        url("../../font/AkzidenzGroteskPro-Regular.ttf") format("ttf");
+}
+
+$blue: #3516F0;
+$orange: #EF6213;
+
+.container {
+	font-family: "AkzBold";
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.grid__container {
+		display: grid;
+		grid-template-columns: 262px 195px 195px 195px 262px;
+		//grid-template-columns: 1.25fr 1fr 1fr 1fr 1.25fr;
+		grid-template-rows: auto;
+		grid-gap: 21px;
+		grid-template-areas: 
+			"logo header header header header"
+			"signal plot1 plot1 plot2 plot2"
+			"src__settings plot3 plot3 plot4 plot4"
+			"src__settings filters filters filters filters"
+			"src__settings achiev achiev filter__manual filter__manual"
+			"footer1 footer2 footer2 footer3 footer3";
+
+		.logo {
+			grid-area: logo;
+			background-color: $blue;
+			margin-right: -21px;
+			
+
+			img {
+				width: 80px;
+				padding-left: 15px;
+				padding-top: 45px;
+			}
+		}
+
+		.header {
+			grid-area: header;
+			background-color: $blue;
+			color: #fff;
+
+			h1 {
+				font-size: 108px;
+				margin-top: 7px;
+				font-family: "AkzSuper";
+			}
+
+			p {
+				font-size: 24px;
+				padding-bottom: 15px;
+				margin-top: -15px;
+				font-family: "AkzRegular";
+				width: 330px;
+				line-height: 129%;
+			}
+		}
+
+		* {
+			line-height: 129%;
+		}
+
+		input {
+			box-sizing: border-box;
+		}
+
+		.signal {
+			grid-area: signal;
+			background-color: $blue;
+
+			.signal__container {
+				margin: 15px;
+				margin-bottom: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.tabs {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					font-family: "AkzSuper";
+					font-size: 24px;
+					width: 100%;
+					cursor: pointer;
+					margin-top: 70px;
+
+
+					.equalizer__tab {
+						width: 100%;
+						background-color: #fff;
+						text-align: center;
+						height: 56px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.equalizer__tab:hover {
+						transform: scale(1.05);
+					}
+
+					.equalizer__tab.active {
+						background-color: #E0E0E0;
+						font-size: 28px;
+					}
+
+					.oscil__tab {
+						width: 100%;
+						background-color: #fff;
+						text-align: center;
+						height: 58px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.oscil__tab:hover {
+						transform: scale(1.05);
+					}
+
+					.oscil__tab.active {
+						background-color: #E0E0E0;
+						font-size: 28px;
+					}
+				}
+
+				.play__button {
+					//margin-top: 21px;
+					width: 100%;
+					height: 58px;
+					background-color: #fff;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+
+					.button {
+						display: flex;
+						flex-direction: row;
+						font-size: 24px;
+						font-family: "AkzSuper";
+
+						img {
+							margin-right: 10px;
+							width: 20px;
+						}
+					}
+
+					
+				}
+
+				.play__button:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+
+		.src__settings {
+			grid-area: src__settings;
+			background-color: $blue;
+			margin-top: -21px;
+			padding-top: 21px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: #fff;
+
+			h2 {
+				font-family: "AkzSuper";
+				font-size: 28px;
+				margin-bottom: 15px;
+				line-height: 129%;
+			}
+
+			input {
+				display: block;
+				width: 100%;
+				margin-top: 13px;
+				margin-bottom: 13px;
+				margin-left: 0;
+        		margin-right: 0;
+			}
+
+			select {
+				width: 100%;
+				margin-top: 10px;
+				font-family: "AkzRegular";
+				font-size: 18px;
+				padding: 7px 15px;
+				outline: none;
+				cursor: pointer;
+				border: none;
+				box-sizing: border-box;
+			}
+
+			label {
+				font-size: 20px;
+				font-family: "AkzBold";
+			}
+
+			p {
+				font-family: "AkzRegular";
+				font-size: 18px;
+			}
+
+			.settings__item {
+				margin-bottom: 20px;
+
+				.value {
+					margin-top: 10px;
+				}
+
+				.range {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+				}
+			}
+
+			.settings__item:last-of-type {
+				margin-bottom: 0;
+			}
+
+			.signal__settings {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.fourier__settings {
+				display: flex;
+				flex-direction: column;
+
+				h2 {
+					margin-top: 30px;
+				}
+
+				input[type=text] {
+					box-sizing: border-box;
+					margin-top: 10px;
+					margin-bottom: 20px;
+					padding: 7px 15px;
+					font-family: "AkzRegular";
+					font-size: 18px;
+					border: none;
+					outline: none;
+					display: block;
+				}
+
+
+			}
+
+			#custom__settings {
+				display: none;
+				margin-bottom: 30px;
+			}
+
+			#main__settings {
+				display: none;
+			}
+
+			.music__settings {
+				display: flex;
+				flex-direction: column;
+
+				h2 {
+					line-height: 129%;
+				}
+
+				h3 {
+					font-family: "AkzBold";
+					font-size: 20px;
+				}
+
+				.upload__button {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+
+					img {
+						width: 38px;
+						cursor: pointer;
+						padding: 10px 97px;
+						background-color: #fff;
+					}
+
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+
+				.upload__button:hover {
+					transform: scale(1.05);
+				}
+
+				input[type=file] {
+					display: none;
+				}
+
+				audio {
+					display: none;
+				}
+
+				span {
+					font-family: "AkzRegular";
+					font-size: 18px;
+				}
+
+				.settings__item {
+
+					p {
+						font-family: "AkzRegular";
+						font-size: 18px;
+					}
+				}
+
+			}
+
+		}
+
+		.plot1 {
+			grid-area: plot1;
+			background-color: $blue;
+		}
+
+		.plot2 {
+			grid-area: plot2;
+			background-color: $orange;
+		}
+
+		.plot3 {
+			grid-area: plot3;
+			background-color: $blue;
+		}
+
+		.plot4 {
+			grid-area: plot4;
+			background-color: $orange;
+		}
+
+		.filters {
+			grid-area: filters;
+			background-color: $orange;	
+
+			.filter__buttons {
+				display: flex;
+				flex-direction: row;
+				margin: 15px;
+
+				.add__filter {
+					text-align: center;
+					padding-top: 12px;
+					padding-bottom: 12px;
+					background-color: #fff;
+					font-family: "AkzSuper";
+					font-size: 24px;
+					cursor: pointer;
+				}
+
+				#addFilter {
+					margin-right: 21px;
+					width: 395px;
+				}
+
+				#deleteFilter {
+					width: 463px;
+				}
+
+				.add__filter:hover {
+					transform: scale(1.03);
+				}
+			}
+
+			.filter__items {
+				display: flex;
+				flex-direction: column;
+
+				.filter__settings {
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					margin-top: 15px;
+					margin-bottom: 15px;
+
+					.filter__settings__item {
+						display: flex;
+						flex-direction: column;
+						width: 195px;
+						margin-right: 21px;
+
+
+						select {
+							font-family: "AkzRegular";
+							font-size: 18px;
+							padding: 7px 15px;
+							outline: none;
+							cursor: pointer;
+							border: none;
+							box-sizing: border-box;
+							margin-top: 32px;
+						}
+
+						label {
+							color: #fff;
+							font-family: "AkzBold";
+							font-size: 20px;
+						}
+
+						.range {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+						}
+
+						p {
+							font-family: "AkzRegular";
+							font-size: 18px;
+							color: #fff;
+						}
+
+						input[type=range] {
+							margin-top: 14px;
+							margin-bottom: 14px;
+						}
+
+						.value {
+							margin-top: 11px;
+						}
+					}
+
+					.filter__settings__item:last-of-type {
+						margin-right: 15px;
+						width: 247px;
+
+					}
+
+					.filter__settings__item:first-of-type {
+						margin-left: 15px;
+						width: 179px;
+					}
+				}
+			}
+		}
+
+		.achiev {
+			grid-area: achiev;
+			background-color: $blue;
+
+			.achiev__container {
+				margin: 15px;
+				display: flex;
+				flex-direction: column;
+
+				.achiev__header {
+					font-family: "AkzSuper";
+					font-size: 28px;
+					color: #fff;
+					margin-bottom: 10px;
+				}
+
+				.achiev__element {
+					background-color: #fff;
+					padding: 7px 15px;
+					margin-bottom: 10px;
+
+					h3 {
+						font-family: "AkzBold";
+						font-size: 20px;
+						margin-bottom: 5px;
+					}
+
+					p {
+						font-family: "AkzRegular";
+						font-size: 18px;
+					}
+				}
+			}
+		}
+
+		.filter__manual {
+			grid-area: filter__manual;
+			background-color: $orange;
+
+			.manual__container {
+				margin: 15px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+
+				.manual__header {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+
+					label {
+						color: #fff;
+						font-family: "AkzSuper";
+						font-size: 28px;
+					}
+
+					select {
+						width: 65%;
+						margin-top: 10px;
+						font-family: "AkzRegular";
+						font-size: 18px;
+						padding: 7px 15px;
+						outline: none;
+						cursor: pointer;
+						border: none;
+						box-sizing: border-box;
+					}
+				}
+
+				.descr {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+
+					.descr__column {
+						width: 45%;
+						margin-bottom: 30px;
+
+						h3 {
+							font-family: "AkzBold";
+							font-size: 20px;
+							color: #fff;
+							margin-bottom: 12px;
+							margin-top: 25px;
+						}
+
+						p {
+							font-family: "AkzRegular";
+							font-size: 18px;
+							color: #fff;
+						}
+
+
+					}
+				}
+			}
+		}
+
+		.footer1 {
+			grid-area: footer1;
+			background-color: $blue;
+		}
+
+		.footer2 {
+			grid-area: footer2;
+			background-color: $blue;
+
+			font-family: "AkzRegular";
+			font-size: 18px;
+			color: #fff;
+			margin-left: -21px;
+			padding-left: 21px;
+			padding-top: 33px;
+			padding-bottom: 33px;
+		}
+
+		.footer3 {
+			grid-area: footer3;
+			background-color: $blue;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			a {
+				margin-right: 10px;
+			}
+
+			margin-left: -21px;
+			padding-left: 21px;
+		}
+	}
+}
+
+.plot__container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 15px 5px;
+	font-size: 36px;
+	color: #fff;
+
+	h3 {
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		opacity: 0.5;
+		font-family: "AkzSuper";
+	}
+
+	.plot {
+		position: relative;
+
+		img {
+
+			width: 260px;
+			z-index: 1;
+		}
+
+		canvas {
+			position: absolute;
+			top: calc(50% - 82px);
+			left: calc(50% - 89px);
+			width: 180px;
+			height: 140px;
+			z-index: 2;
+		}
+	}
+}
+
+
+
+
+
+
+ input[type='range'] {
+        -webkit-appearance: none;
+        background-color: rgba(111, 111, 111, 0);
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 5px;
+        border-radius: 3px;
+        -webkit-appearance: none;
+        background-color: #fff;
+        outline: none;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+        width: 23px;
+        -webkit-appearance: none;
+        height: 23px;
+        border-radius: 15px;
+        cursor: pointer;
+        background: #E0E0E0;
+        margin-top: -8px;
+        outline: none;	
+    }
+
+    input[type='range']:disabled::-webkit-slider-thumb {
+        background: #DE976F;
+    }
+
+    input[type='range']:disabled::-webkit-slider-runnable-track {
+        background-color: #F2A274;
+    }
+    
+    input[type="range"]::-moz-range-progress {
+        background-color: #fff; 
+    }
+    input[type="range"]::-moz-range-track {  
+        background-color: #fff;
+    }
+    input[type="range"]::-ms-fill-lower {
+        background-color: #fff; 
+    }
+    input[type="range"]::-ms-fill-upper {  
+        background-color: #fff;
+    }
+
+
+
+    .message {
+    	position: fixed;
+    	bottom: 0;
+    	right: -500px;
+    	padding: 15px;
+    	background-color: $blue;
+    	color: #fff;
+    	width: 400px;
+    	z-index: 3;
+
+    	transition: 0.5s;
+
+    	h3 {
+    		font-family: "AkzBold";
+    		font-size: 20px;
+    	}
+
+    	p {
+    		font-family: "AkzRegular";
+    		font-size: 18px;
+    	}
+
+    	.message__title {
+    		display: flex;
+    		flex-direction: row;
+    		justify-content: space-between;
+
+    		img {
+    			background-color: #fff;
+    			width: 18px;
+    			height: 18px;
+    			padding: 4px;
+    			cursor: pointer;
+    		}
+
+    		img:hover {
+    			transform: scale(1.2);
+    		}
+    	}
+
+    	.message__body {
+    		display: flex;
+    		flex-direction: row;
+    		margin-top: 10px;
+
+    		img {
+	    		width: 60px;
+	    		height: 60px;
+	    		border-radius: 30px;
+	    		margin-right: 20px;
+	    	}
+    	}
+    	
+    }
+
+
+    .achiev__popup {
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100vw;
+    	height: 100vh;
+    	font-size: 200px;
+    	font-family: "AkzSuper";
+    	display: none;
+    	justify-content: center;
+    	align-items: center;
+    	z-index: 4;
+    	background-color: $orange;
+    	color: #fff;
+
+    	transition: 0.3s;
+
+    }

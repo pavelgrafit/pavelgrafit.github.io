@@ -1,309 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MORGENSHTERN</title>
-    <link rel="icon" href="images/icons/icon.png">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style-dist.css">	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sonic wave</title>
+	<link rel="stylesheet" href="style/minCSS/reset.css">
+	<link rel="stylesheet" href="style/CSS/style.css">
+	 <link rel="shortcut icon" href="images/favicon.svg" type="image/svg">
 </head>
 <body>
 
-	<header class="header">
-		<div class="container">
-			<div class="header__body" id="header__body">
-				<div class="header__logo">
-					morgenshtern
-				</div>
-				<div class="header__burger">
-					<span></span>
-				</div>
-				<nav class="header__menu">
-					<ul class="header__list">
-						<li>
-							<a href="#home" class="header__link">Home</a>
-						</li>
-						<li>
-							<a href="#gallery" class="header__link">Gallery</a>
-						</li>
-						<li>
-							<a href="#contact__us" class="header__link">Contact us</a>
-						</li>
-						<li>
-							<a href="#links" class="header__link">Links</a>
-						</li>
-						<li>
-							<a href="#popup" class="header__link">Important</a>
-						</li>
-					</ul>
-				</nav>
+	<div class="achiev__popup" id="achievPopup">
+		<p id="popupText">ПОСОСИ</p>
+	</div>
+
+	<div class="message" id="message">
+		<div class="message__title">
+			<h3>Новое сообщение</h3>
+			<img src="images/close.svg" alt="close" id="closeMessage">
+		</div>
+		<div class="message__body">
+			<img src="images/pavel.jpg" alt="pavel">
+			<div class="body__content">
+				<h3>Соколов Павел</h3>
+				<p>Привет! Листай ниже, изучай фильтры, зарабатывай достижения и получай награды 😁</p>
 			</div>
 		</div>
-	</header>
+		
+	</div>
 
+	<div class="container">
+		<div class="grid__container">
 
-	<div class="bio" id="home">
-		<div class="container">
-			<div class="bio__body">
-				<div class="chapter" id="chapter__1">
-					<p class="text" id="text__1">Сделал самый прослушиваемый альбом года</p>
-				</div>
-				<div class="chapter" id="chapter__2">
-					<p class="text" id="text__2">Записал самые громкие фиты года</p>
-				</div>
-				<div class="chapter" id="chapter__3">
-					<p class="text" id="text__3">Записал мировой трек с Lil Pump</p>
-				</div>
-				<div class="chapter" id="chapter__4">
-					<p class="text" id="text__18">Заработал за год более 3.000.000 &#36;</p>
-					<p class="text" id="text__17">Попал в список Forbes</p>
-					<p class="text" id="text__16">Стал музыкантом и человеком года</p>
-					<p class="text" id="text__15">Стал женщиной года</p>
-					<p class="text" id="text__14">Стал самым обсуждаемым артистом</p>
-					<p class="text" id="text__13">Самое длинное сольное интервью у Дудя</p>
-				</div>
-				<div class="chapter" id="chapter__5">
-					<div class="song__title">
-						Listen to a last song
+			<div class="logo">
+				<img src="images/logo.svg" alt="logo">
+			</div>
+
+			<div class="header">
+				<h1>Sonic wave</h1>
+				<p>Изучайте аналоговые фильтры с простотой и весельем</p>
+			</div>
+
+			<div class="signal">
+				<div class="signal__container">
+					<div class="play__button" id="button">
+						<div class="button">
+							<img src="images/play icon.svg" alt="play" id="buttonImg">
+							<p id="buttonText">Запустить</p>
+						</div>
 					</div>
-					<div class="song__image" id="logo">
-						<img src="images/skull/main.png" alt="morgen" id="skull">
-						<img src="images/skull/dop.png" alt="jaw" id="jaw">
+
+					<div class="tabs">
+						<div class="equalizer__tab active" id="equalizer">
+							Эквалайзер
+						</div>
+						<div class="oscil__tab" id="oscilloscope">
+							Осциллограф
+						</div>
 					</div>
-					<div class="song__player">
-						<audio src="audio/crystal.mp3" type="audio/mp3" id="audio" preload></audio>
-						<input type="button" name="button" id=button value="Start a Magic">
+
+					
+
+				</div>
+			</div>
+
+			<div class="src__settings">
+				<div class="music__settings" id="music__settings">
+					<h2>
+						Настройки музыки
+					</h2>
+
+					<div class="settings__item">
+						<h3>Загрузите файл</h3>
+
+						<div class="upload__button" id="uploadIcon">
+							<label for="audioFile"><img src="images/upload.svg" alt=""></label>
+						</div>
+						
+						<input type="file" name="audioFile" id="audioFile">
+						<span id="fileName">MORGENSHTERN - PABLO.mp3</span>
+						
+
+						<audio src="audio/MORGENSHTERN - Pablo.mp3" type="audio/mp3" id="audio" preload controls></audio>
+					</div>
+					
+
+					<div class="settings__item">
+						<label for="audioVolume">Громкость</label>
+						<p class="value" id="volumeValue">Значение: 50</p>
+						<input type="range" name="audioVolume" id="audioVolume" min="0" max="100" value="50">
+						<div class="range">
+							<p>0</p>
+							<p>100</p>
+						</div>
+					</div>
+
+					<div class="settings__item">
+						<label for="audioDuration">Длительность</label>
+						<p class="value" id="currentDuration">Значение: 0:00</p>
+						<input type="range" name="audioDuration" id="audioDuration" min="0" max="168" value="0">
+						<div class="range">
+							<p>0:00</p>
+							<p id="durationValue">2:48</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="signal__settings" id="main__settings">
+					<h2>
+						Настройки сигнала
+					</h2>
+
+					<div class="settings__item">
+						<label for="signalType">Тип</label>
+						<select name="signalType" id="signalType" size="1">
+							<option value="sine" selected>Синусоидальный</option>
+							<option value="square">Прямоугольный</option>
+							<option value="sawtooth">Пилообразный</option>
+							<option value="triangle">Треугольный</option>
+							<option value="custom">Произвольный</option>
+						</select>
+					</div>
+
+					<div class="settings__item">
+						<label for="signalFreq">Частота</label>
+						<p class="value" id="freqValue">Значение: 400</p>
+						<input type="range" name="signal__freq" id="signalFreq" min="0" max="17000" value="400">
+						<div class="range">
+							<p>0</p>
+							<p>1700</p>
+						</div>
+					</div>
+
+					<div class="settings__item">
+						<label for="signalGain">Коэффициент усиления</label>
+						<p class="value" id="gainValue">Значение: 100</p>
+						<input type="range" name="signal__gain" id="signalGain" min="0" max="100" value="100">
+						<div class="range">
+							<p>0</p>
+							<p>100</p>
+						</div>
+					</div>
+
+					
+				</div>
+
+				<div class="fourier__settings" id="custom__settings">
+					<h2>
+						Коэффициенты Фурье
+					</h2>
+
+					<div class="settings__item">
+						<label for="a0">a<sub>0</sub></label>
+						<input type="text" name="a0" id="a0" value="1">
+						
+						<label for="an">a<sub>n</sub></label>
+						<input type="text" name="an" id="an" value="0">
+						
+						<label for="bn">b<sub>n</sub></label>
+						<input type="text" name="bn" id="bn" value="(1 - cos(pi * n)) / (pi * n)">
+
+						<label for="n">n</label>
+						<p class="value" id="nValue">Значение: 10</p>
+						<input type="range" name="n" id="n" min="2" max="100" value="10">
+						<div class="range">
+							<p>2</p>
+							<p>100</p>
+						</div>
 					</div>
 				</div>
-				<div class="chapter" id="chapter__6">
-					<p class="text" id="text__4">10 треков возглавили Топ-Чарты</p>
-					<p class="text" id="text__5">Снял 8 клипов, каждый более 10 миллионов просмотров</p>
-					<p class="text" id="text__6">Сделал самый масштабный гив рунета</p>
-					<p class="text" id="text__7">Отвез Новый Мерин в Узбекистан</p>
-					<p class="text" id="text__8">Купил Cadillac Escalade</p>
-					<p class="text" id="text__9">Купил Mercedes Benz S63AMG</p>
+
+			</div>
+
+			<div class="plot1">
+				<div class="plot__container">
+					<h3>Амплитуда</h3>
+					<div class="plot">
+						<img src="images/blueOscil.png" alt="blueOscil">
+						<canvas id="canvas__0"></canvas>
+					</div>
+					<h3>Время</h3>
 				</div>
-				<div class="chapter" id="chapter__7">
-					<p class="text" id="text__12">Купил ювелирки на 5.000.000 &#8381;</p>
+			</div>
+
+			<div class="plot2">
+				<div class="plot__container">
+					<h3>Амплитуда</h3>
+					<div class="plot">
+						<img src="images/orangeOscil.png" alt="blueOscil">
+						<canvas id="canvas__1"></canvas>
+					</div>
+					<h3>Время</h3>
 				</div>
-				<div class="chapter" id="chapter__8">
-					<p class="text" id="text__11">Открыл Ресторан в центре Москвы</p>
+			</div>
+
+			<div class="plot3">
+				<div class="plot__container">
+					<h3>Амплитуда</h3>
+					<div class="plot">
+						<img src="images/blueOscil.png" alt="blueOscil">
+						<canvas id="canvas__2"></canvas>
+					</div>
+					<h3>Частота</h3>
 				</div>
-				<div class="chapter" id="chapter__9">
-					<p class="text" id="text__10">Лучший выпуск Вечернего Урганта</p>
+			</div>
+
+			<div class="plot4">
+				<div class="plot__container">
+					<h3>Амплитуда</h3>
+					<div class="plot">
+						<img src="images/orangeOscil.png" alt="blueOscil">
+						<canvas id="canvas__3"></canvas>
+					</div>
+					<h3>Частота</h3>
 				</div>
+			</div>
+
+			<div class="filters">
+				<div class="filter__buttons">
+					<div id="addFilter" class="add__filter">
+						+ Добавить фильтр
+					</div>
+					<div id="deleteFilter" class="add__filter">
+						– Удалить фильтр
+					</div>
+				</div>
+				<div class="filter__items" id="filters">
+					<div class="filter__settings" id="filter__0">
+						<div class="filter__settings__item">
+							<label for="filterType">Тип</label>
+							<select name="filterType" id="filterType__0" size="1">
+								<option value="lowpass">Lowpass</option>
+								<option value="highpass">Highpass</option>
+								<option value="bandpass">Bandpass</option>
+								<option value="lowshelf" selected>Lowshelf</option>
+								<option value="highshelf">Highshelf</option>
+								<option value="peaking">Peaking</option>
+								<option value="notch">Notch</option>
+							</select>
+						</div>
+						<div class="filter__settings__item">
+							<label for="signalFreq">Частота</label>
+							<p class="value" id="freqValue__0">Значение: 50</p>
+							<input type="range" name="filter__freq" id="filterFreq__0" min="0" max="1000" value="50">
+							<div class="range">
+								<p>0</p>
+								<p>1000</p>
+							</div>
+						</div>
+						<div class="filter__settings__item">
+							<label for="filterQ">Добротность</label>
+							<p class="value" id="QValue__0">Значение: 0.001</p>
+							<input type="range" name="filter__Q" id="filterQ__0" min="1" max="10000" value="1">
+							<div class="range">
+								<p>0.001</p>
+								<p>10</p>
+							</div>
+						</div>
+						<div class="filter__settings__item">
+							<label for="signalGain">Коэффициент усиления</label>
+							<p class="value" id="gainValue__0">Значение: 0</p>
+							<input type="range" name="filter__gain" id="filterGain__0" min="-40" max="40" value="0">
+							<div class="range">
+								<p>-40</p>
+								<p>40</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="achiev">
+				<div class="achiev__container">
+					<div class="achiev__header">
+						<h2>Достижения</h2>
+					</div>
+					<div class="achiev__body">
+						<div class="achiev__element">
+							<h3>
+								Мастер
+							</h3>
+							<p>
+								Используйте все типы фильтров
+							</p>
+							<p id="achievCount">
+								Прогресс: 1 из 7
+							</p>
+							<p>
+								Награда: ???
+							</p>
+						</div>
+						<div class="achiev__element">
+							
+						</div>
+						<div class="achiev__element">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="filter__manual">
+				<div class="manual__container">
+					<div class="manual__header">
+						<label for="manualFilter">Типы фильтров</label>
+						<select name="manualFilter" id="manualFilter" size="1">
+							<option value="lowpass" selected>Lowpass</option>
+							<option value="highpass">Highpass</option>
+							<option value="bandpass">Bandpass</option>
+							<option value="notch">Notch</option>
+							<option value="lowshelf">Lowshelf</option>
+							<option value="highshelf">Highshelf</option>
+							<option value="peaking">Peaking</option>
+						</select>
+					</div>
+					<div class="descr">
+						<div class="descr__column">
+							<h3>
+								Описание
+							</h3>
+							<p id="descrHelp">
+								Стандартный резонансный фильтр нижних частот второго порядка со спадом 12 дБ/октава. Частоты ниже частоты среза проходят, а частоты выше — ослабляются
+							</p>
+							<h3>
+								Частота
+							</h3>
+							<p id="freqHelp">
+								Частота среза
+							</p>
+						</div>
+						<div class="descr__column">
+							<h3>
+								Коэффициент усиления
+							</h3>
+							<p id="gainHelp">
+								Не используется
+							</p>
+							<h3>
+								Добротность
+							</h3>
+							<p id="QHelp">
+								Величина пика около частоты среза. Чем больше значение, тем больше пик
+							</p>
+						</div>
+					</div>
+					
+
+				</div>
+			</div>
+
+			<div class="footer1">
+
+			</div>
+
+			<div class="footer2">	
+				&#169; Соколов П.А., 2021
+			</div>
+
+			<div class="footer3">
+
+				<a href="https://www.instagram.com/pavelgrafit/" target="_blank"><img src="images/inst logo.svg" alt="Instagram"></a>
+				<a href="https://github.com/pavelgrafit/" target="_blank"><img src="images/github logo.svg" alt="Github"></a>
+				<a href="https://www.behance.net/pavelgrafit" target="_blank"><img src="images/behance logo.svg" alt="Behance"></a>
+
 			</div>
 		</div>
 	</div>
 
 
-	<div class="bass">
-		<!-- <div class="container"> -->
-			<div class="bass__body" id="bass__body">
-				<div class="bass__rect" id="rect__1"></div>
-				<div class="bass__rect" id="rect__2"></div>
-				<div class="bass__rect" id="rect__3"></div>
-				<div class="bass__rect" id="rect__4"></div>
-				<div class="bass__rect" id="rect__5"></div>
-				<div class="bass__rect" id="rect__6"></div>
-				<div class="bass__rect" id="rect__7"></div>
-				<div class="bass__rect" id="rect__8"></div>
-				<div class="bass__rect" id="rect__9"></div>
-				<div class="bass__rect" id="rect__10"></div>
-				<div class="bass__rect" id="rect__11"></div>
-				<div class="bass__rect" id="rect__12"></div>
-				<div class="bass__rect" id="rect__13"></div>
-				<div class="bass__rect" id="rect__14"></div>
-				<div class="bass__rect" id="rect__15"></div>
-				<div class="bass__rect" id="rect__16"></div>
-			</div>
-		<!-- </div> -->
-	</div>
 
-
-	<div class="gallery">
-		<span id="gallery"></span>
-		<div class="container">
-			<div class="gallery__body">
-				<div class="gallery__title">
-					Gallery
-				</div>
-				<div class="gallery__grid">
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CKML3cQrWjJ/" target="_blank"><img src="images/inst/1.jpg" alt="The First Image"></a>
-						</div>
-						<div class="item__description">
-							<p>864 416 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> &#127964;&#65039;&#127797;&#128042;</p>
-							<p>View all 5 504 comments</p>
-						</div>
-					</div>
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CKCvJrrrQeZ/" target="_blank"><img src="images/inst/2.jpg" alt="The Second Image"></a>
-						</div>
-						<div class="item__description">
-							<p>834 433 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> чёрный рол ройс забирает джек пот</p>
-							<p>View all 5 089 comments</p>
-						</div>
-					</div>
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CJn4EsKrzx3/" target="_blank"><img src="images/inst/3.jpg" alt="The Third Image"></a>
-						</div>
-						<div class="item__description">
-							<p>769 495 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> ну че все по красоте залетели в 2021?</p>
-							<p>View all 4 154 comments</p>
-						</div>
-					</div>
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CJd1M2jrtjX/" target="_blank"><img src="images/inst/4.jpg" alt="The Fourth Image"></a>
-						</div>
-						<div class="item__description">
-							<p>837 789 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> с праздником, сынки &#128118; 2020 был трудным.. хотя нет)</p>
-							<p>View all 4 790 comments</p>
-						</div>
-					</div>
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CJOUKuBr6Mc/" target="_blank"><img src="images/inst/5.jpg" alt="The Fifth Image"></a>
-						</div>
-						<div class="item__description">
-							<p>505 897 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> ой девачкиии прикупил подарков себе и своей биач в голд эппл &#129321;</p>
-							<p>View all 1 479 comments</p>
-						</div>
-					</div>
-					<div class="gallery__item">
-						<div class="item__title">
-							<a href="https://www.instagram.com/morgen_shtern/" target="_black"><img src="images/icons/logo.jpg" alt="icon"></a>
-							<p><span class="gallery__bold">morgen_shtern</span></p>
-						</div>
-						<div class="item__image">
-							<a href="https://www.instagram.com/p/CI7u2WlnOA5/" target="_blank"><img src="images/inst/6.jpg" alt="The Sixth Image"></a>
-						</div>
-						<div class="item__description">
-							<p>569 530 likes</p>
-							<p><span class="gallery__bold">morgen_shtern</span> первый счастливчик, который укатит на северный полюс уже найден &#129395;</p>
-							<p>View all 3 048 comments</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-	<div class="feedback">
-		<span id="contact__us"></span>
-		<div class="container">
-			<div class="feedback__body">
-				<div class="feedback__title">
-					Contact Us
-				</div>
-				<!-- "mailto:pavelgrafit@mail.ru?subject=Important!&body=name" enctype="text/plain" -->
-				<form action="https://formspree.io/f/xknpyage" class="feedback__form" method="post" required>
-					<div class="form__title">
-						Give us a feedback
-					</div>
-					<input type="text" name="name" placeholder="Full Name" required>
-					<input type="email" name="email" placeholder="Email" required>
-					<input type="tel" name="tel" placeholder="Phone Number" required>
-					<textarea name="message" id="message" placeholder="Your message" required></textarea>
-					<div class="check">
-						<input type="checkbox" id="checkbox" required>
-						<label for="checkbox">I accept the terms & conditions</label>
-					</div>
-					<input type="submit" name="submit" value="SEND">
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-
-	<footer class="footer" id="links">
-		<div class="container">
-			<div class="footer__body">
-				<div class="footer__title">
-					Links
-				</div>
-				<ul class="footer__list">
-					<il>
-						<a href="https://www.instagram.com/morgen_shtern/" class="footer__link" target="_blank"><img src="images/icons/inst.png" alt="Instagram"></a>
-					</il>
-					<il>
-						<a href="https://open.spotify.com/artist/0XNKQFs2Ewb3y0VsFUFc5l" class="footer__link" target="_blank"><img src="images/icons/spotify.png" alt="Sporify"></a>
-					</il>
-					<il>
-						<a href="https://music.apple.com/ru/artist/morgenshtern/1371400021" class="footer__link" target="_blank"><img src="images/icons/applemusic.png" alt="Apple Music"></a>
-					</il>
-					<il>
-						<a href="https://music.yandex.ru/artist/5781113" class="footer__link" target="_blank"><img src="images/icons/yandex.png" alt="Yandex Music"></a>
-					</il>
-					<il>
-						<a href="https://vk.com/artist/morgenshtern" class="footer__link" target="_blank"><img src="images/icons/vk.png" alt="VK"></a>
-					</il>
-				</ul>
-			</div>
-		</div>
-	</footer>
-
-
-
-
-	<div id="popup" class="popup">
-		<a href="##" class="popup__area"></a>
-		<div class="popup__body">
-			<div class="popup__content">
-				<a href="##" class="popup__close">&#10005;</a>
-				<div class="popup__title">
-					pavelgrafit.github.io
-				</div>
-				<div class="popup__text">
-					<p>Данный сайт создан исключительно в целях обучения и не использует авторские материалы в коммерческих целях</p>
-					<p>pavelgrafit, 2021, <a href="https://www.instagram.com/pavelgrafit/" target="_blank">Instagram</a> <a href="https://vk.com/pavelgrafit" target="_blank">VK</a> <a href="http://github.com/pavelgrafit/" target="_blank">Github</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<script type="text/javascript" src="burger-dist.js"></script>
-    <script type="text/javascript" src="script-dist.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
+
+<script type="text/javascript" src="script/script.js"></script>
+<script src="https://unpkg.com/mathjs@9.3.2/lib/browser/math.js"></script>
+
 </html>
