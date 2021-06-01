@@ -12,11 +12,7 @@ var oscillator;
 var signalGain;
 var analyserArray = [];
 
-audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-for (let i = 0; i < 2; i++) {
-    analyserArray.push(audioCtx.createAnalyser());
-    analyserArray[i].fftSize = 256;
-}
+
 
 
 var freqValueArr = [];
@@ -36,13 +32,7 @@ filtersGain.push(document.getElementById('filterGain__0'));
 filtersQ.push(document.getElementById('filterQ__0'));
 
 let filters = [];
-filters.push(audioCtx.createBiquadFilter());
-filters[0].type = filtersType[0].value; 
-filters[0].frequency.value = filtersFreq[0].value;
-filters[0].gain.value = filtersGain[0].value;
-filters[0].Q.value = filtersQ[0].value / 1000;
-filtersGain[0].disabled = false;
-filtersQ[0].disabled = true;
+
 
 
 
@@ -54,6 +44,7 @@ filterArray.push(document.getElementById('filter__0'));
 
 addFilter = document.getElementById('addFilter');
 addFilter.onclick = function() {
+    preparation();
     
     filterArray.push(document.createElement('div'));
     filterArray[filterArray.length - 1].className = 'filter__settings';
@@ -140,6 +131,7 @@ addFilter.onclick = function() {
 
 deleteFilter = document.getElementById('deleteFilter');
 deleteFilter.onclick = function() {
+    preparation();
     if (filters.length > 0) {
         if (filters.length == 1) {
             analyserArray[0].disconnect(filters[filters.length - 1]);
@@ -158,6 +150,10 @@ deleteFilter.onclick = function() {
         filtersGain.pop();
         filtersQ.pop();
         filters.pop();
+
+        freqValueArr.pop();
+        QValueArr.pop();
+        gainValueArr.pop();
     }
 }
 
@@ -292,22 +288,7 @@ filterListener();
 
 
 
-oscillator = audioCtx.createOscillator();
-oscillator.type = signalHtmlType.value;
-oscillator.frequency.value = signalFreq.value;
 
-signalGain = audioCtx.createGain();
-signalGain.gain.value = signalHtmlGain.value / 100;
-
-
-
-
-// CONNECTION
-oscillator.start();
-signalGain.connect(analyserArray[0]);
-analyserArray[0].connect(filters[0]);
-filters[0].connect(analyserArray[1]);
-analyserArray[1].connect(audioCtx.destination);
 
 
 
@@ -363,7 +344,7 @@ audio.volume = 0.5;
 var audioFile = document.getElementById("audioFile");
 var fileName = document.getElementById('fileName');
 
-src = audioCtx.createMediaElementSource(document.getElementById("audio"));
+
 
 
 var colorCount = document.getElementById("colorCount");
@@ -374,7 +355,6 @@ var orangeColor = document.querySelectorAll('.orange');
 var oscilArray = [];
 for (let i = 0; i < 4; i++) {
     oscilArray.push(document.getElementById('oscil__' + i));
-    console.log(oscilArray[i].src);
 }
 var uploadImg = document.getElementById('uploadImg');
 var logo = document.getElementById('logo');
@@ -395,10 +375,10 @@ changeColor.onclick = function () {
     }
     for (let i = 0; i < 4; i++) {
         pathLenght = oscilArray[i].src.split("/");
-        if (pathLenght[pathLenght.length - 1] == 'blueOscil.png') {
-            oscilArray[i].src = 'images/orangeOscil.png';
+        if (pathLenght[pathLenght.length - 1] == 'blueOscil.jpg') {
+            oscilArray[i].src = 'images/orangeOscil.jpg';
         } else {
-            oscilArray[i].src = 'images/blueOscil.png';
+            oscilArray[i].src = 'images/blueOscil.jpg';
         }
     }
     changeColor.classList.toggle('rotate');
@@ -432,9 +412,10 @@ audioFile.addEventListener("input", (e) => {
         colorMaster.style.backgroundColor = "#E0E0E0";
         
         hideMessage();
+        clearTimeout(introHide);
         setTimeout(function() {messageText.innerHTML = "Неплохо! Ты стал мастером цвета 🎨 Продолжай в том же духе чтобы получить самую лучшую награду";}, 500);
         setTimeout(showMessage, 1000);
-        setTimeout(hideMessage, 16000);
+        setTimeout(hideMessage, 11000);
         colorAchiev = true;
     }
     
@@ -507,10 +488,10 @@ function oscilToMusic() {
     buttonImg.src = "images/play icon.svg";
 }
 
-signalGain.disconnect(analyserArray[0]);    
-src.connect(analyserArray[0]);
+
 
 function musicToOscil() {
+    preparation();
     src.disconnect(analyserArray[0]);
 
     oscillator.connect(signalGain);
@@ -534,7 +515,48 @@ var buttonImg = document.getElementById("buttonImg");
 var timerArray = [];
 var audioInterval;
 
+function preparation() {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        for (let i = 0; i < 2; i++) {
+            analyserArray.push(audioCtx.createAnalyser());
+            analyserArray[i].fftSize = 256;
+        }
+        oscillator = audioCtx.createOscillator();
+        oscillator.type = signalHtmlType.value;
+        oscillator.frequency.value = signalFreq.value;
+
+        signalGain = audioCtx.createGain();
+        signalGain.gain.value = signalHtmlGain.value / 100;
+
+
+        filters.push(audioCtx.createBiquadFilter());
+        filters[0].type = filtersType[0].value; 
+        filters[0].frequency.value = filtersFreq[0].value;
+        filters[0].gain.value = filtersGain[0].value;
+        filters[0].Q.value = filtersQ[0].value / 1000;
+        filtersGain[0].disabled = false;
+        filtersQ[0].disabled = true;
+
+        // CONNECTION
+        oscillator.start();
+        signalGain.connect(analyserArray[0]);
+        analyserArray[0].connect(filters[0]);
+        filters[0].connect(analyserArray[1]);
+        analyserArray[1].connect(audioCtx.destination);
+
+        
+
+        src = audioCtx.createMediaElementSource(document.getElementById("audio"));
+
+        signalGain.disconnect(analyserArray[0]);    
+        src.connect(analyserArray[0]);
+    }
+}
+
 button.onclick = function(){
+    preparation();
+
     if(buttonText.innerHTML === "Запустить"){
         buttonText.innerHTML = "Остановить";
         buttonImg.src = "images/pause icon.svg";
@@ -774,13 +796,14 @@ function drawFFT(canvasNum, analyserNum) {
 
 var message = document.getElementById("message");
 var closeMessage = document.getElementById("closeMessage");
-var audioMessage = new Audio('../audio/message.mp3');
+/*var audioMessage = new Audio('../audio/message.mp3');
 audioMessage.preload = "auto";
+audioMessage.muted = 'true';*/
 
 
 function showMessage() {
     message.style.right = "0px";
-    audioMessage.play();
+/*    audioMessage.play();*/
 }
 
 function hideMessage() {
@@ -789,7 +812,7 @@ function hideMessage() {
 
 
 setTimeout(showMessage, 1000);
-setTimeout(hideMessage, 16000);
+var introHide = setTimeout(hideMessage, 11000);
 
 closeMessage.onclick = function() {
     hideMessage();

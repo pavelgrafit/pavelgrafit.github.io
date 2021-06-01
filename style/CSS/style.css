@@ -38,7 +38,8 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
-  margin-right: -21px;
+  margin-right: -22px;
+  padding-right: 1px;
 }
 .container .grid__container .logo img {
   width: 80px;
@@ -196,8 +197,8 @@
   -ms-grid-row-span: 5;
   -ms-grid-column: 1;
   grid-area: src__settings;
-  margin-top: -21px;
-  padding-top: 21px;
+  margin-top: -22px;
+  padding-top: 22px;
   padding-left: 15px;
   padding-right: 15px;
   color: #fff;
@@ -645,8 +646,8 @@
   font-family: "AkzRegular";
   font-size: 18px;
   color: #fff;
-  margin-left: -21px;
-  padding-left: 21px;
+  margin-left: -22px;
+  padding-left: 22px;
   padding-top: 33px;
   padding-bottom: 33px;
 }
@@ -665,8 +666,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: -21px;
-  padding-left: 21px;
+  margin-left: -22px;
+  padding-left: 22px;
 }
 .container .grid__container .footer3 a {
   margin-right: 10px;

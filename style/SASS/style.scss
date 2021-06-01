@@ -51,7 +51,8 @@ $orange: #EF6213;
 
 		.logo {
 			grid-area: logo;
-			margin-right: -21px;
+			margin-right: -22px;
+			padding-right: 1px;
 			
 
 			img {
@@ -182,8 +183,8 @@ $orange: #EF6213;
 
 		.src__settings {
 			grid-area: src__settings;
-			margin-top: -21px;
-			padding-top: 21px;
+			margin-top: -22px;
+			padding-top: 22px;
 			padding-left: 15px;
 			padding-right: 15px;
 			color: #fff;
@@ -583,8 +584,8 @@ $orange: #EF6213;
 			font-family: "AkzRegular";
 			font-size: 18px;
 			color: #fff;
-			margin-left: -21px;
-			padding-left: 21px;
+			margin-left: -22px;
+			padding-left: 22px;
 			padding-top: 33px;
 			padding-bottom: 33px;
 		}
@@ -600,8 +601,8 @@ $orange: #EF6213;
 				margin-right: 10px;
 			}
 
-			margin-left: -21px;
-			padding-left: 21px;
+			margin-left: -22px;
+			padding-left: 22px;
 		}
 	}
 }
